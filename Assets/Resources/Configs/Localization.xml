@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<localization>
+    <ui language="russian">
+        <element key="{ui_score}">Счёт</element>
+        <element key="{ui_menu}">Меню</element>
+        <element key="{ui_tutor_move}">Движение</element>
+        <element key="{ui_tutor_jump}">Прыжок</element>
+        <element key="{ui_sound_settings}">Настройки звука</element>
+        <element key="{ui_effect_volume}">Громкость эффектов</element>
+        <element key="{ui_music_volume}">Громкость музыки</element>
+        <element key="{ui_level_selection}">Выбор уровня</element>
+        <element key="{ui_shop}">Магазин</element>
+        <element key="{ui_buy}">Купить за</element>
+        <element key="{ui_settings}">Настройки</element>
+        <element key="{ui_language}">Язык</element>
+    </ui>
+    <ui language="english">
+        <element key="{ui_score}">Score</element>
+        <element key="{ui_menu}">Menu</element>
+        <element key="{ui_tutor_move}">Move</element>
+        <element key="{ui_tutor_jump}">Jump</element>
+        <element key="{ui_sound_settings}">Sound Settings</element>
+        <element key="{ui_effect_volume}">Effect Volume</element>
+        <element key="{ui_music_volume}">Music Volume</element>
+        <element key="{ui_level_selection}">Level Selection</element>
+        <element key="{ui_shop}">Shop</element>
+        <element key="{ui_buy}">Buy for</element>
+        <element key="{ui_settings}">Settings</element>
+        <element key="{ui_language}">Language</element>
+    </ui>
+</localization>

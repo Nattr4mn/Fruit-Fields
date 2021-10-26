@@ -9,9 +9,8 @@ public class FruitsSpawner : MonoBehaviour
 
     [SerializeField] private List<Transform> _spawnPoints;
     [SerializeField] private List<Fruit> _fruits;
-    [SerializeField] private Player _player;
-    [SerializeField] private AudioClip _fruitSound;
-    [SerializeField] private AudioSource _effectsSource;
+    [SerializeField] private AudioClip _fruitSoundClip;
+    [SerializeField] private AudioSource _soundEffectSource;
     private int _collectedFruits = 0;
 
     private void Start()
@@ -20,14 +19,14 @@ public class FruitsSpawner : MonoBehaviour
         {
             var randomFruit = _fruits[Random.Range(0, _fruits.Count - 1)];
             var fruit = Instantiate(randomFruit, spawnPoint.position, Quaternion.identity, spawnPoint);
-            fruit.Initialized(_player);
             fruit.FruitCollected += FruitIsCollected;
         }
     }
 
     public void FruitIsCollected()
     {
+        print("+1");
         _collectedFruits++;
-        _effectsSource.PlayOneShot(_fruitSound);
+        _soundEffectSource.PlayOneShot(_fruitSoundClip);
     }
 }

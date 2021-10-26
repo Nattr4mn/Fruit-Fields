@@ -16,10 +16,10 @@ public class Portal : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject == _player.gameObject)
+        if(collision.TryGetComponent(out Player player))
         {
             _animator.SetTrigger("finish");
-            StartCoroutine(BlackHole(collision.gameObject));
+            StartCoroutine(BlackHole(player.gameObject));
         }
     }
 

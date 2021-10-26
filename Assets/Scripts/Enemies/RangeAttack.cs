@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class RangeAttack : MonoBehaviour, IAttack
 {
-    [SerializeField] private float _damage;
+    [SerializeField] private int _damage;
     [SerializeField] private float _attackDistance;
     [SerializeField] private Transform _bulletContainer;
     [SerializeField] private Transform _bulletStartPosition;

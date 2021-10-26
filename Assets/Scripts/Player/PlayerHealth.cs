@@ -1,33 +1,37 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(Thrown))]
+[RequireComponent(typeof(ObjectTossed))]
 public class PlayerHealth : MonoBehaviour
 {
-    public float CurrentHealth => _currentHealth;
-    public float MaxHealth => _maxHealth;
+    public int CurrentHealth => _currentHealth;
+    public int MaxHealth => _maxHealth;
     public UnityEvent HpChange;
 
-    [SerializeField] private float _currentHealth;
-    [SerializeField] private float _maxHealth;
+    [SerializeField] private int _currentHealth;
+    [SerializeField] private int _maxHealth;
     [SerializeField] private Player _player;
-    private Thrown _thrown;
+    private ObjectTossed _tossed;
+    private bool _isDamaged = false;
 
     private void Start()
     {
-        _thrown = GetComponent<Thrown>();
+        _tossed = GetComponent<ObjectTossed>();
+        _currentHealth = _maxHealth;
     }
 
-    public void HealthChange(float healthPoints)
+    public void HealthChange(int healthPoints)
     {
         if (healthPoints > 0 && _currentHealth < _maxHealth)
         {
             _currentHealth += healthPoints;
         }
-        else if (healthPoints < 0 && _currentHealth > 0)
+        else if (healthPoints < 0 && _currentHealth > 0 && !_isDamaged)
         {
             _player.Animator.SetTrigger("hit");
-            _thrown.Throw();
+            _currentHealth += healthPoints;
+            _isDamaged = true;
+            _tossed.Toss();
         }
         HpChange.Invoke();
     }    

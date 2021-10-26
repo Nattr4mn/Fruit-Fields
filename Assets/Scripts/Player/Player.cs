@@ -6,13 +6,14 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerMovement))]
 [RequireComponent(typeof(PlayerHealth))]
 [RequireComponent(typeof(SkinLoader))]
-[RequireComponent(typeof(Jumping))]
+[RequireComponent(typeof(PlayerJump))]
 [RequireComponent(typeof(Rigidbody2D))]
 public class Player : MonoBehaviour
 {
+    public int Keys => _keys;
     public PlayerHealth Health => _playerHealth;
     public PlayerMovement PlayerMovement => _playerMovement;
-    public Jumping Jumping => _jumping;
+    public PlayerJump Jump => _playerJump;
     public SkinLoader Skin => _skin;
     public Animator Animator => _animator;
     public SpriteRenderer SkinSprite => _skinSprite;
@@ -20,10 +21,12 @@ public class Player : MonoBehaviour
     private Rigidbody2D _playerRB;
     private Animator _animator;
     private PlayerMovement _playerMovement;
-    private Jumping _jumping;
+    private PlayerJump _playerJump;
     private PlayerHealth _playerHealth;
     private SkinLoader _skin;
     private SpriteRenderer _skinSprite;
+    private int _keys = 0;
+    public void AddKey() => _keys++;
 
     private void Awake()
     {
@@ -34,8 +37,9 @@ public class Player : MonoBehaviour
         _playerRB = GetComponent<Rigidbody2D>();
         _playerHealth = GetComponent<PlayerHealth>();
         _playerMovement = GetComponent<PlayerMovement>();
-        _jumping = GetComponent<Jumping>();
-        _jumping.Initialized(_animator);
+        _playerJump = GetComponent<PlayerJump>();
+        _playerJump.Initialized(_animator);
         _playerMovement.Initialized(_animator);
     }
+
 }

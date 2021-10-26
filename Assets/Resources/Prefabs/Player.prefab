@@ -362,6 +362,7 @@ GameObject:
   - component: {fileID: 7455348500572113123}
   - component: {fileID: 7455348500572113148}
   - component: {fileID: 7455348500572113149}
+  - component: {fileID: 9105992985562664629}
   - component: {fileID: 7455348500572113151}
   - component: {fileID: 4747903485719250137}
   - component: {fileID: 7455348500572113122}
@@ -406,11 +407,11 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.0001
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 5
-  m_Material: {fileID: 6200000, guid: 8c7b20a68c0ce6f4cad632af9d561c51, type: 2}
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -440,6 +441,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 0.90409946, y: 1.5137866}
+  m_EdgeRadius: 0
+--- !u!61 &9105992985562664629
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7455348500572113120}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 8c7b20a68c0ce6f4cad632af9d561c51, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.031164646, y: -0.20376658}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.9376707, y: 1.4506841}
   m_EdgeRadius: 0
 --- !u!114 &7455348500572113151
 MonoBehaviour:
@@ -497,11 +524,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _jumpForce: 15
-  _groundDetector: {fileID: 7455348501815029655}
+  _maxJumps: 2
+  _groundCheckerRadius: 0.2
+  _groundChecker: {fileID: 7455348501815029655}
+  _rigidbody: {fileID: 7455348500572113148}
   _groundMask:
     serializedVersion: 2
     m_Bits: 64
-  _rigidbody: {fileID: 7455348500572113148}
 --- !u!114 &7455348500572113145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -533,7 +562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 7455348500572113148}
-  _dropForce: 0
+  _dropForce: 15
 --- !u!1 &7455348500631235924
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,9 +690,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7455348501815029655}
   m_Layer: 9
-  m_Name: GroundDetector
+  m_Name: Ground Checker
   m_TagString: Untagged
-  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1

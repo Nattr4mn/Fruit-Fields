@@ -6,7 +6,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D _rigidbody;
     private Animator _playerAnimator;
     private Vector2 _direction;
-    private bool _isGround;
 
     public void Initialized(Animator characterAnimator)
     {

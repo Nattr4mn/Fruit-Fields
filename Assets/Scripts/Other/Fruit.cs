@@ -10,20 +10,19 @@ public class Fruit : MonoBehaviour
     }
 
     [SerializeField] private Animator _animator;
-    private Player _player;
     private UnityEvent _event = new UnityEvent();
-
-    public void Initialized(Player player)
-    {
-        _player = player;
-    }
+    private bool _isCollected = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject == _player.gameObject)
+        if(collision.TryGetComponent(out Player player))
         {
             _animator.SetTrigger("clap");
-            _event.Invoke();
+            if(!_isCollected)
+            {
+                _isCollected = true;
+                _event.Invoke();
+            }
         }
     }
 

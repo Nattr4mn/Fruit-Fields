@@ -7,9 +7,9 @@ class Bullet : MonoBehaviour
     [SerializeField] private Transform _bullet;
     [SerializeField] private float _speed;
     private float _lifeDistance;
-    private float _bulletDamage;
+    private int _bulletDamage;
 
-    public void Initialized(float lifeDistance, float bulletDamage)
+    public void Initialized(float lifeDistance, int bulletDamage)
     {
         _lifeDistance = lifeDistance;
         _bulletDamage = bulletDamage;

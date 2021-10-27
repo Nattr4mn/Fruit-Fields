@@ -13,11 +13,6 @@ public class RinoEnemy : Enemy
     private bool _isRunning = false;
     private bool _isPause = false;
 
-    void Update()
-    {
-        EnemyLogic();
-    }
-
     public override void EnemyLogic()
     {
         if(!_isPause)

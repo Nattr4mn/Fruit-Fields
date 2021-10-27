@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -34,7 +35,7 @@ public class PlayerHealth : MonoBehaviour
             _tossed.Toss();
         }
         HpChange.Invoke();
-    }    
+    } 
     
     public void Kill()
     {

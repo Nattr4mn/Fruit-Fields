@@ -10,6 +10,10 @@ public class PlantEnemy : Enemy
 
     [SerializeField] private RangeAttack _attack;
     [SerializeField] private Vision _vision;
+    void Update()
+    {
+        EnemyLogic();
+    }
 
     public override void EnemyLogic()
     {

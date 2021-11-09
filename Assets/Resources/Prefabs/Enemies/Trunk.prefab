@@ -40,7 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3131218376727800069}
   m_Layer: 0
-  m_Name: BulletParent
+  m_Name: BulletsContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -396,7 +396,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.03, y: -0.20169848}
+  m_Offset: {x: 0.02614969, y: -0.20169848}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -407,7 +407,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.313693, y: 1.5310243}
+  m_Size: {x: 1.2575434, y: 1.5310243}
   m_EdgeRadius: 0
 --- !u!114 &3131218378401548508
 MonoBehaviour:
@@ -442,7 +442,6 @@ MonoBehaviour:
   - {fileID: 3131218377685365565}
   - {fileID: 3131218376514772407}
   _pauseTime: 2
-  _animator: {fileID: 3131218378401548507}
 --- !u!114 &3131218378401548505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -459,7 +458,7 @@ MonoBehaviour:
   _attackDistance: 10
   _bulletContainer: {fileID: 3131218376727800069}
   _bulletStartPosition: {fileID: 3131218378026081165}
-  _bulletTemplate: {fileID: 1009360060812078865, guid: bea9412f494fc1749aea678601ae21d3, type: 3}
+  _bulletTemplate: {fileID: 1009360060812078876, guid: bea9412f494fc1749aea678601ae21d3, type: 3}
   _animator: {fileID: 3131218378401548507}
 --- !u!114 &3131218378401548506
 MonoBehaviour:

@@ -113,7 +113,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: -23792059411196189, guid: d044e47558f94214e8e0ac8ad3868951, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.9411765, y: 1}
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5909618747412102596}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78e7d15a9ccccb844ac22fe09dc7a2b7, type: 3}
+  m_Script: {fileID: 11500000, guid: 0c663b06bb38bcc40b521aed2119cfe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 5909618747412102592}
@@ -233,7 +233,6 @@ MonoBehaviour:
   - {fileID: 5909618747945462422}
   - {fileID: 5909618748060601663}
   _pauseTime: 5
-  _animator: {fileID: 5909618747412102592}
 --- !u!1 &5909618747945462423
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,7 +385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b5855ac7bdfc13448eeb6365e425f91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemy: {fileID: 5909618747412102604}
+  _enemy: {fileID: 0}
   _animator: {fileID: 5909618747412102592}
   _enemyRigidbody: {fileID: 5909618747412102605}
   _enemyCollider: {fileID: 5909618747412102606}

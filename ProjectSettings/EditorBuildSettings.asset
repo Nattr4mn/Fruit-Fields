@@ -16,14 +16,26 @@ EditorBuildSettings:
     guid: a113ecb534e4372449c8e3cf41b3a54b
   - enabled: 1
     path: Assets/Scenes/Location 1/Level_2.unity
-    guid: d7524d54bd1f5ad48b3ac2a221b00628
+    guid: 8d7dc2ec0e90d1943a3d826fcd6b8d37
   - enabled: 1
     path: Assets/Scenes/Location 1/Level_3.unity
-    guid: 101988281a68b4648801b4bec9f6306b
+    guid: a25da1ee4325f784e9f41873fb42f771
+  - enabled: 1
+    path: Assets/Scenes/Location 1/Level_4.unity
+    guid: 6b7787d089eca094085ebde8188d95af
+  - enabled: 1
+    path: Assets/Scenes/Location 1/Level_5.unity
+    guid: 3c013e777dbd31b4cbecab9957c1a55a
+  - enabled: 1
+    path: Assets/Scenes/Location 1/Level_6.unity
+    guid: abeab93d70ecaa84483ca0ed878b8b51
+  - enabled: 1
+    path: Assets/Scenes/Location 1/Level_7.unity
+    guid: 7582690507edb2b49907b0fe185f81fc
+  - enabled: 1
+    path: Assets/Scenes/Location 1/Level_8.unity
+    guid: f14d0ce0fe431c743be5e4af7c266d4e
   - enabled: 1
     path: Assets/Scenes/Location 1/Level_9.unity
-    guid: c95fc6e104ec4f3489badb72f71f8423
-  - enabled: 1
-    path: Assets/Scenes/Location 1/Level_Test.unity
-    guid: 24cd654a8baf21f428973a906ec6341f
+    guid: be353a8ec57035d478b08f80bdf8d796
   m_configObjects: {}

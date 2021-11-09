@@ -39,6 +39,11 @@ public class TrunkEnemy : Enemy
 
         if (!_isAngry)
         {
+            if (_movement.IsStoped)
+                Animator.SetBool("running", false);
+            else
+                Animator.SetBool("running", true);
+
             Movement.Move();
         }
     }

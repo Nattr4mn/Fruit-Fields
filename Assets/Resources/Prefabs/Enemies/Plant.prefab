@@ -352,7 +352,7 @@ MonoBehaviour:
   _attackDistance: 5
   _bulletContainer: {fileID: 7247955176308922810}
   _bulletStartPosition: {fileID: 7247955175516928717}
-  _bulletTemplate: {fileID: 2844727253905371592, guid: fab26665f2e633a44b79c56d6da3c61d, type: 3}
+  _bulletTemplate: {fileID: 2844727253905371589, guid: fab26665f2e633a44b79c56d6da3c61d, type: 3}
   _animator: {fileID: 7247955176714551564}
 --- !u!114 &7247955176714551566
 MonoBehaviour:
@@ -366,7 +366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50803988c7b060f48b9cf231ae39d44e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _visionDistance: 5
+  _visionDistance: 8
   _triggerMask:
     serializedVersion: 2
     m_Bits: 512
@@ -398,4 +398,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46f858da0f575d24b92f6e2b467c1d01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _collisionDamage: 0
+  _collisionDamage: 1

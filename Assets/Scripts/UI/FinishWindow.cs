@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -6,9 +7,7 @@ public class FinishWindow : MonoBehaviour
 {
     [SerializeField] private AudioSource _effectsSource;
     [SerializeField] private AudioClip _winSound;
-    [SerializeField] private GameObject _firstStar;
-    [SerializeField] private GameObject _secondStar;
-    [SerializeField] private GameObject _thirdStar;
+    [SerializeField] private List<GameObject> _starsObjects;
     [SerializeField] private FruitsSpawner _fruitsSpawner;
     [SerializeField] private TextMeshProUGUI _scoreText;
 
@@ -22,24 +21,16 @@ public class FinishWindow : MonoBehaviour
 
     private IEnumerator ActivatedStars()
     {
-        if (_fruitsSpawner.CollectedFruits >= _fruitsSpawner.TotalFruit * 0.4f)
-        {
-            _firstStar.SetActive(true);
-            yield return new WaitForSeconds(0.3f);
-        }
+        var procent = 0.3f;
 
-        if (_fruitsSpawner.CollectedFruits >= _fruitsSpawner.TotalFruit * 0.7f)
+        foreach(var star in _starsObjects)
         {
-            _secondStar.SetActive(true);
-            yield return new WaitForSeconds(0.3f);
+            if(_fruitsSpawner.CollectedFruits >= _fruitsSpawner.TotalFruit * procent)
+            {
+                star.SetActive(true);
+                yield return new WaitForSeconds(0.3f);
+                procent += 0.3f;
+            }
         }
-
-        if (_fruitsSpawner.CollectedFruits >= _fruitsSpawner.TotalFruit * 0.9f)
-        {
-            _thirdStar.SetActive(true);
-            yield return new WaitForSeconds(0.3f);
-        }
-
-        yield return null;
     }
 }

@@ -17,10 +17,9 @@ public class FruitsSpawner : MonoBehaviour
 
     private void Start()
     {
-        _star.FruitCollected += StarIsCollected;
-
         if (_star != null)
         {
+            _star.FruitCollected += StarIsCollected;
             _totalFruits = _spawnPoints.Count + (int)(_spawnPoints.Count * 0.15f);
         }
         else

@@ -6,16 +6,16 @@ public class PlayerControl : MonoBehaviour
 
     public void Left()
     {
-        _player.PlayerMovement.Direction(Vector3.left);
+        _player.Movement.Direction(Vector3.left);
     }
     public void Right()
     {
-        _player.PlayerMovement.Direction(Vector3.right);
+        _player.Movement.Direction(Vector3.right);
     }
 
     public void Stop()
     {
-        _player.PlayerMovement.Direction(Vector3.zero);
+        _player.Movement.Direction(Vector3.zero);
     }
 
     public void Jump()

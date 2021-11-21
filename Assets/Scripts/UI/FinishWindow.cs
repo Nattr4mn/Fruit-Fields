@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FinishWindow : MonoBehaviour
 {
@@ -15,8 +16,15 @@ public class FinishWindow : MonoBehaviour
     {
         _effectsSource.PlayOneShot(_winSound);
         _scoreText.text = _fruitsSpawner.CollectedFruits.ToString() + " / " + _fruitsSpawner.TotalFruit.ToString();
-        Save.Instance.GameData.Fruits += _fruitsSpawner.CollectedFruits;
+        SaveProgress();
         StartCoroutine(ActivatedStars());
+    }
+
+    private void SaveProgress()
+    {
+        Save.Instance.GameData.Fruits += _fruitsSpawner.CollectedFruits;
+        if (SceneManager.GetActiveScene().buildIndex == Save.Instance.GameData.LastLevel)
+            Save.Instance.GameData.LastLevel += 1;
     }
 
     private IEnumerator ActivatedStars()

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3cfab737a4e33c4b9ddba6258d1e503, type: 3}
+  m_Name: MaskDude
+  m_EditorClassIdentifier: 
+  _skinName: MaskDude
+  _price: 600
+  _previewSprite: {fileID: -6367560908665664636, guid: f1f8eeac582c96b4499918e617363fd0, type: 3}
+  _skinObject: {fileID: 7616219305017225883, guid: 38b7bca04b0091b4683da16a413892ad, type: 3}

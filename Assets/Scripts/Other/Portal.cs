@@ -5,8 +5,6 @@ using UnityEngine.Events;
 public class Portal : MonoBehaviour
 {
     public UnityEvent Event;
-
-    [SerializeField] private Player _player;
     private Animator _animator;
 
     private void Start()
@@ -19,16 +17,16 @@ public class Portal : MonoBehaviour
         if(collision.TryGetComponent(out Player player))
         {
             _animator.SetTrigger("finish");
-            StartCoroutine(BlackHole(player.gameObject));
+            StartCoroutine(BlackHole(player));
         }
     }
 
-    private IEnumerator BlackHole(GameObject player)
+    private IEnumerator BlackHole(Player player)
     {
-        var spriteRenderer = _player.SkinSprite;
+        var spriteRenderer = player.GetComponent<SpriteRenderer>();
         float progress = spriteRenderer.color.a;
 
-        _player.PlayerMovement.Direction(Vector3.zero);
+        player.Movement.Direction(Vector3.zero);
 
         while (progress > 0)
         {
@@ -36,6 +34,8 @@ public class Portal : MonoBehaviour
             spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, progress);
             yield return null;
         }
+
+        player.gameObject.SetActive(false);
     }
 
     private void Finish()

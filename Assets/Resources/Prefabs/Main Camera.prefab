@@ -287,7 +287,7 @@ Transform:
   m_Children:
   - {fileID: 8082582170683605926}
   - {fileID: 8082582169948779789}
-  - {fileID: 5063695654554581817}
+  - {fileID: 262373434783751145}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -382,7 +382,7 @@ MonoBehaviour:
   _isStatic: 1
   _target: {fileID: 0}
   _interpolateValue: 0.2
---- !u!1001 &5996173968472435310
+--- !u!1001 &1645871143604488894
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -394,12 +394,12 @@ PrefabInstance:
       value: '[BACKGROUND]'
       objectReference: {fileID: 0}
     - target: {fileID: 1545698025003045206, guid: a3b7cc0cfb217c149851ae6b107035b9, type: 3}
-      propertyPath: _width
-      value: 33
-      objectReference: {fileID: 0}
+      propertyPath: _camera
+      value: 
+      objectReference: {fileID: 8082582171624805241}
     - target: {fileID: 1545698025003045206, guid: a3b7cc0cfb217c149851ae6b107035b9, type: 3}
-      propertyPath: _height
-      value: 22
+      propertyPath: _flowSpeed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1545698025003045207, guid: a3b7cc0cfb217c149851ae6b107035b9, type: 3}
       propertyPath: m_RootOrder
@@ -447,8 +447,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3b7cc0cfb217c149851ae6b107035b9, type: 3}
---- !u!4 &5063695654554581817 stripped
+--- !u!4 &262373434783751145 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1545698025003045207, guid: a3b7cc0cfb217c149851ae6b107035b9, type: 3}
-  m_PrefabInstance: {fileID: 5996173968472435310}
+  m_PrefabInstance: {fileID: 1645871143604488894}
   m_PrefabAsset: {fileID: 0}

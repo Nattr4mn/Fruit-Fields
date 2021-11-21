@@ -2,22 +2,24 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(ObjectTossed))]
+[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(TossableObject))]
 public class PlayerHealth : MonoBehaviour
 {
     public int CurrentHealth => _currentHealth;
     public int MaxHealth => _maxHealth;
     public UnityEvent HpChange;
 
-    [SerializeField] private int _currentHealth;
     [SerializeField] private int _maxHealth;
-    [SerializeField] private Player _player;
-    private ObjectTossed _tossed;
+    private int _currentHealth;
+    private Animator _animator;
+    private TossableObject _tossableObject;
     private bool _isDamaged = false;
 
     private void Start()
     {
-        _tossed = GetComponent<ObjectTossed>();
+        _animator = GetComponent<Animator>();
+        _tossableObject = GetComponent<TossableObject>();
         _currentHealth = _maxHealth;
     }
 
@@ -29,10 +31,11 @@ public class PlayerHealth : MonoBehaviour
         }
         else if (healthPoints < 0 && _currentHealth > 0 && !_isDamaged)
         {
-            _player.Animator.SetTrigger("hit");
+            _animator.SetTrigger("hit");
             _currentHealth += healthPoints;
             _isDamaged = true;
-            _tossed.Toss();
+            _tossableObject.Toss();
+            Handheld.Vibrate();
         }
         HpChange.Invoke();
     } 

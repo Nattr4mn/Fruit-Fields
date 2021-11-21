@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class SkinLoader : MonoBehaviour
 {
-    public GameObject CurrentSkin => _currentSkin;
+    public Skin CurrentSkin => _currentSkin;
 
-    [SerializeField] private List<Character> _skinList;
-    private GameObject _currentSkin;
+    [SerializeField] private List<Skin> _skinList;
+    private Skin _currentSkin;
 
     public void LoadSkin()
     {
@@ -15,14 +15,10 @@ public class SkinLoader : MonoBehaviour
 
         foreach(var skin in _skinList)
         {
-            if(skin.CharacterName == currentSkin)
+            if(skin.SkinName == currentSkin)
             {
-                skin.gameObject.SetActive(true);
-                _currentSkin = skin.gameObject;
-            }
-            else
-            {
-                skin.gameObject.SetActive(false);
+                _currentSkin = skin;
+                break;
             }
         }
     }

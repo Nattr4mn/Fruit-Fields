@@ -1,45 +1,47 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerMovement))]
 [RequireComponent(typeof(PlayerHealth))]
-[RequireComponent(typeof(SkinLoader))]
 [RequireComponent(typeof(PlayerJump))]
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(TossableObject))]
 public class Player : MonoBehaviour
 {
-    public int Keys => _keys;
     public PlayerHealth Health => _playerHealth;
-    public PlayerMovement PlayerMovement => _playerMovement;
+    public PlayerMovement Movement => _playerMovement;
     public PlayerJump Jump => _playerJump;
-    public SkinLoader Skin => _skin;
-    public Animator Animator => _animator;
-    public SpriteRenderer SkinSprite => _skinSprite;
+    public TossableObject Tossable => _tossableObject;
 
-    private Rigidbody2D _playerRB;
-    private Animator _animator;
     private PlayerMovement _playerMovement;
     private PlayerJump _playerJump;
     private PlayerHealth _playerHealth;
-    private SkinLoader _skin;
-    private SpriteRenderer _skinSprite;
-    private int _keys = 0;
-    public void AddKey() => _keys++;
+    private TossableObject _tossableObject;
 
     private void Awake()
     {
-        _skin = GetComponent<SkinLoader>();
-        _skin.LoadSkin();
-        _animator = _skin.CurrentSkin.GetComponent<Animator>(); 
-        _skinSprite = _skin.CurrentSkin.GetComponent<SpriteRenderer>();
-        _playerRB = GetComponent<Rigidbody2D>();
         _playerHealth = GetComponent<PlayerHealth>();
         _playerMovement = GetComponent<PlayerMovement>();
         _playerJump = GetComponent<PlayerJump>();
-        _playerJump.Initialized(_animator);
-        _playerMovement.Initialized(_animator);
+        _tossableObject = GetComponent<TossableObject>();
+
+        if (!TryLoadSkin())
+            throw new Exception("Failed to load skin!");
     }
 
+    private bool TryLoadSkin()
+    {
+        foreach (Transform child in transform)
+        {
+            if(child.TryGetComponent(out SkinLoader skinLoader))
+            {
+                skinLoader.LoadSkin();
+                GetComponent<Animator>().runtimeAnimatorController = skinLoader.CurrentSkin.SkinObject.GetComponent<Animator>().runtimeAnimatorController;
+                GetComponent<SpriteRenderer>().sprite = skinLoader.CurrentSkin.SkinObject.GetComponent<SpriteRenderer>().sprite;
+                return true;
+            }
+        }
+
+        return false;
+    }
 }

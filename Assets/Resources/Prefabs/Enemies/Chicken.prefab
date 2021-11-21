@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5909618746561567308}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4, y: 5.5, z: 0}
+  m_LocalPosition: {x: -4, y: 5.5, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5909618747412102595}
@@ -154,7 +154,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.020834565, y: -0.20411897}
+  m_Offset: {x: -0.020834565, y: -0.12098026}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -165,7 +165,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1628797, y: 0.9676032}
+  m_Size: {x: 1.1628797, y: 1.1338806}
   m_EdgeRadius: 0
 --- !u!50 &5909618747412102605
 Rigidbody2D:
@@ -360,7 +360,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.004159689, y: 0.26972485}
+  m_Offset: {x: -0.004159689, y: 0.30352855}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -371,7 +371,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7901902, y: 0.48160172}
+  m_Size: {x: 0.7901902, y: 0.077785015}
   m_EdgeRadius: 0
 --- !u!114 &5909618748315361399
 MonoBehaviour:
@@ -385,7 +385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b5855ac7bdfc13448eeb6365e425f91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemy: {fileID: 0}
+  _enemy: {fileID: 5909618747412102604}
   _animator: {fileID: 5909618747412102592}
   _enemyRigidbody: {fileID: 5909618747412102605}
   _enemyCollider: {fileID: 5909618747412102606}

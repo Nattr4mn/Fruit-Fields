@@ -14,6 +14,7 @@ public class GameData
     public int Heal = 0;
     public int DoubleSpeed = 0;
     public int Immortality = 0;
+    public int LastLevel = 1;
     public Dictionary<string, int> BuffList = new Dictionary<string, int>();
     public List<string> PurchasedSkins = new List<string>() { "PinkMan" };
 }

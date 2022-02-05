@@ -1,20 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class KillZone : MonoBehaviour
 {
-    [SerializeField] private Enemy _enemy;
-    [SerializeField] private Animator _animator;
-    [SerializeField] private Rigidbody2D _enemyRigidbody;
-    [SerializeField] private Collider2D _enemyCollider;
-    [SerializeField] private Collider2D _killZoneCollider;
+    [SerializeField] private EnemyHealth _hp;
+    private bool _isDamaged = false;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.TryGetComponent(out Player player))
         {
+            player.Tossable.Toss();
+            if (!_isDamaged)
+            {
+                _isDamaged = true;
+                _hp.HealthChange(player);
+            }
+        }
+    }
 
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.TryGetComponent(out Player player))
+        {
+            _isDamaged = false;
         }
     }
 }

@@ -7,10 +7,11 @@ public class RangeAttack : MonoBehaviour, IAttack
 {
     [SerializeField] private int _damage;
     [SerializeField] private float _attackDistance;
+    [SerializeField] private Vector3 _attackDirection;
     [SerializeField] private Transform _bulletContainer;
     [SerializeField] private Transform _bulletStartPosition;
-    [SerializeField] private Bullet _bulletTemplate;
     [SerializeField] private Animator _animator;
+    [SerializeField] private Bullet _bulletTemplate;
     private bool _isAttack = false;
     private List<Bullet> _bulletsPool = new List<Bullet>();
 
@@ -30,22 +31,23 @@ public class RangeAttack : MonoBehaviour, IAttack
         if (bullet == null)
             _bulletsPool.Add(CreateNewBullet());
         else
-            LaunchBullet(bullet);
+            BulletLaunch(bullet);
 
         _isAttack = false;
     }
 
-    private void LaunchBullet(Bullet bullet)
+    private void BulletLaunch(Bullet bullet)
     {
+        var attackDirection = transform.TransformDirection(_attackDirection);
         bullet.gameObject.SetActive(true);
-        bullet.Shot(_bulletStartPosition.position, transform.right);
+        bullet.Shot(_bulletStartPosition.position, attackDirection);
     }
 
     private Bullet CreateNewBullet()
     {
         var newBullet = Instantiate(_bulletTemplate, _bulletStartPosition.position, Quaternion.identity, _bulletContainer);
         newBullet.Initialized(_attackDistance, _damage);
-        newBullet.Shot(_bulletStartPosition.position, transform.right);
+        BulletLaunch(newBullet);
         return newBullet;
     }
 

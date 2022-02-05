@@ -5,7 +5,6 @@ using UnityEngine;
 public class TargetZone : MonoBehaviour
 {
     public bool IsTriggered => _isTriggered;
-
     private bool _isTriggered = false;
 
 

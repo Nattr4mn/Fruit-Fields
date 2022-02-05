@@ -5,8 +5,6 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class EnemyMovement : MonoBehaviour
 {
-    public IReadOnlyList<Transform> MovementPoints => _movementPoints;
-    public bool IsStoped => _isStoped;
 
     [SerializeField] private float _speed;
     [SerializeField] private List<Transform> _movementPoints;
@@ -14,12 +12,14 @@ public class EnemyMovement : MonoBehaviour
     private int _currentPoint;
     private bool _isStoped = false;
 
+    public IReadOnlyList<Transform> MovementPoints => _movementPoints;
+    public bool IsStoped => _isStoped;
+
     public void Move()
     {
         if (CheckPosition(_movementPoints[_currentPoint].position) && !_isStoped)
         {
-            _isStoped = true;
-            StartCoroutine(Stoped());
+            Stop(_pauseTime);
         }
 
         if(!_isStoped)
@@ -33,6 +33,12 @@ public class EnemyMovement : MonoBehaviour
     {
         Direction(position);
         transform.position = Vector3.MoveTowards(transform.position, _movementPoints[_currentPoint].position, _speed * Time.deltaTime);
+    }
+
+    public void Stop(float pauseTime)
+    {
+        _isStoped = true;
+        StartCoroutine(Stoped(pauseTime));
     }
 
     private void Direction(Vector3 position)
@@ -64,9 +70,9 @@ public class EnemyMovement : MonoBehaviour
         return false;
     }
 
-    private IEnumerator Stoped()
+    private IEnumerator Stoped(float pauseTime)
     {
-        yield return new WaitForSeconds(_pauseTime);
+        yield return new WaitForSeconds(pauseTime);
         _isStoped = false;
     }
 }

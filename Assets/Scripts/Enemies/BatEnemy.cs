@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(EnemyMovement))]
-public class BatEnemy : Enemy
+public class BatEnemy : AbstractEnemy
 {
     [SerializeField] private EnemyMovement _movement;
     [SerializeField] private TargetZone _targetZone;

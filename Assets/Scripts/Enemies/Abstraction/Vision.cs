@@ -9,6 +9,7 @@ public class Vision : MonoBehaviour
 
     public bool DetectEnemy(Vector2 direction)
     {
+        direction = transform.TransformDirection(direction);
         var hit = Physics2D.Raycast(transform.position, direction, _visionDistance, _triggerMask);
         if (hit)
         {
@@ -24,14 +25,5 @@ public class Vision : MonoBehaviour
         }    
 
         return false;
-    }
-
-    private void OnDrawGizmos()
-    {
-        var right = transform.right * _visionDistance;
-        var left = -right;
-
-        Gizmos.DrawRay(transform.position, left);
-        Gizmos.DrawRay(transform.position, right);
     }
 }

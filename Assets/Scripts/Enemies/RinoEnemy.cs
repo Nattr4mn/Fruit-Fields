@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Vision))]
-public class RinoEnemy : Enemy
+public class RinoEnemy : AbstractEnemy
 {
     [SerializeField] private float _speed;
     [SerializeField] private float _pauseAfterCollision;

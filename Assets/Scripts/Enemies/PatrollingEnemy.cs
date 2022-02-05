@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(EnemyMovement))]
-public class PatrollingEnemy : Enemy
+public class PatrollingEnemy : AbstractEnemy
 {
-    [SerializeField] private EnemyMovement _movement;
+    private EnemyMovement _movement;
 
     private void Start()
     {
+        _movement = GetComponent<EnemyMovement>();
         transform.position = _movement.MovementPoints[0].position;
     }
 

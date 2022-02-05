@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: FanAnimator
+  m_Controller: {fileID: 9100000, guid: 628d5d891ad5c2a4ba0425a2e0cdf555, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 0d360710c000cbd49b73813daa531dd1, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: ec516322baaac3f499353c0ca81a41b5, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: b13ad25864ba31f42acddf1b6abc285d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8ce16f63c02ea774b9f60ceeb607c3b9, type: 2}

@@ -2,17 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AbstractEnemy))]
+[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Collider2D))]
 public class Killable : MonoBehaviour
 {
-    [SerializeField] private Enemy _enemy;
-    [SerializeField] private Animator _animator;
-    [SerializeField] private Rigidbody2D _enemyRigidbody;
-    [SerializeField] private Collider2D _enemyCollider;
     [SerializeField] private Collider2D _killableCollider;
+    private AbstractEnemy _enemy;
+    private Animator _animator;
+    private Rigidbody2D _enemyRigidbody;
+    private Collider2D _enemyCollider;
 
-    public void Kill(Player player)
+    private void Start()
     {
-        player.Tossable.Toss();
+        _enemy = GetComponent<AbstractEnemy>();
+        _animator = GetComponent<Animator>();
+        _enemyRigidbody = GetComponent<Rigidbody2D>();
+        _enemyCollider = GetComponent<Collider2D>();
+    }
+
+    public void Kill()
+    {
         _animator.SetTrigger("hit");
         _killableCollider.enabled = false;
         _enemy.enabled = false;

@@ -1,36 +1,25 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(RangeAttack))]
-[RequireComponent(typeof(Vision))]
 [RequireComponent(typeof(EnemyMovement))]
-public class TrunkEnemy : Enemy
+public class TrunkEnemy : RangeEnemy
 {
-    public float AngryTime => _angryTime;
-    public EnemyMovement Movement => _movement;
-    public IAttack Attack => _attack;
-
     [SerializeField] private float _angryTime;
-    [SerializeField] private RangeAttack _attack;
-    [SerializeField] private EnemyMovement _movement;
-    [SerializeField] private Vision _vision;
+    private EnemyMovement _movement;
     private bool _isAngry = false;
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
+        _movement = GetComponent<EnemyMovement>();
         transform.position = _movement.MovementPoints[0].position;
     }
 
     public override void EnemyLogic()
     {
-        bool enemyVisible = _vision.DetectEnemy(-transform.right) || _vision.DetectEnemy(transform.right);
-
-        if (enemyVisible)
+        if (TryFindEnemy())
         {
-            _isAngry = true;
-            Animator.SetBool("running", false);
-            Attack.Attack();
+            AttackEnemy();
         }
         else if (_isAngry)
         {
@@ -39,22 +28,34 @@ public class TrunkEnemy : Enemy
 
         if (!_isAngry)
         {
-            if (_movement.IsStoped)
-                Animator.SetBool("running", false);
-            else
-                Animator.SetBool("running", true);
-
-            Movement.Move();
+            Move();
         }
+    }
+
+    private void AttackEnemy()
+    {
+        _isAngry = true;
+        Animator.SetBool("running", false);
+        Attack.Attack();
+    }
+
+    private void Move()
+    {
+        if (_movement.IsStoped)
+            Animator.SetBool("running", false);
+        else
+            Animator.SetBool("running", true);
+
+        _movement.Move();
     }
 
     private IEnumerator Angry()
     {
         float timer = 0f;
-        while(timer <= AngryTime)
+        while (timer <= _angryTime)
         {
             timer += Time.deltaTime;
-            if (_vision.DetectEnemy(-transform.right) || _vision.DetectEnemy(transform.right))
+            if (TryFindEnemy())
             {
                 yield break;
             }

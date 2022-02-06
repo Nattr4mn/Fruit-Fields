@@ -15,6 +15,11 @@ public class EnemyMovement : MonoBehaviour
     public IReadOnlyList<Transform> MovementPoints => _movementPoints;
     public bool IsStoped => _isStoped;
 
+    public void Init(List<Transform> points)
+    {
+        _movementPoints = points;
+    }
+
     public void Move()
     {
         if (CheckPosition(_movementPoints[_currentPoint].position) && !_isStoped)

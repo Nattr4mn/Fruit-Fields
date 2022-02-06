@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(EnemyMovement))]
@@ -10,7 +8,6 @@ public class PatrollingEnemy : AbstractEnemy
     private void Start()
     {
         _movement = GetComponent<EnemyMovement>();
-        transform.position = _movement.MovementPoints[0].position;
     }
 
     public override void EnemyLogic()

@@ -252,11 +252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _jumpForce: 15
   _maxJumps: 2
-  _groundCheckerRadius: 0.2
-  _groundChecker: {fileID: 7455348501815029655}
-  _ignoreLayer:
-    serializedVersion: 2
-    m_Bits: 512
+  _groundChecker: {fileID: 9172483755528935027}
 --- !u!114 &7455348500572113145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,10 +291,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7455348501815029655}
+  - component: {fileID: 9172483755528935027}
   m_Layer: 9
   m_Name: Ground Checker
   m_TagString: Untagged
-  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -316,3 +313,20 @@ Transform:
   m_Father: {fileID: 7455348500572113123}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9172483755528935027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7455348501815029652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7e3d60259aedd2479e07c888c7fbcc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ignoreLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  _boxCheckerSize: {x: 0.75, y: 0.25, z: 0}
+  _color: {r: 0, g: 1, b: 0.9644842, a: 0.2627451}

@@ -6,9 +6,7 @@ public class PlayerJump : MonoBehaviour
 {
     [SerializeField] private float _jumpForce;
     [SerializeField] private int _maxJumps = 2;
-    [SerializeField] private float _groundCheckerRadius = 0.2f;
-    [SerializeField] private Transform _groundChecker;
-    [SerializeField] private LayerMask _ignoreLayer;
+    [SerializeField] private GroundChecker _groundChecker;
     private Rigidbody2D _rigidbody;
     private Animator _animator;
     private bool _inAir = false;
@@ -39,8 +37,8 @@ public class PlayerJump : MonoBehaviour
 
     private bool CheckGround()
     {
-        var ground = Physics2D.OverlapCircle(_groundChecker.position, _groundCheckerRadius, ~_ignoreLayer);
-        if (ground != null)
+        var groundCheck = _groundChecker.CheckGround();
+        if (groundCheck)
         {
             _jumpsCount = _maxJumps;
             _inAir = false;
@@ -48,10 +46,5 @@ public class PlayerJump : MonoBehaviour
         }
         _inAir = true;
         return false;
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawSphere(_groundChecker.position, _groundCheckerRadius);
     }
 }

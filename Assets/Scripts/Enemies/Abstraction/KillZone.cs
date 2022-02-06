@@ -13,7 +13,7 @@ public class KillZone : MonoBehaviour
             if (!_isDamaged)
             {
                 _isDamaged = true;
-                _hp.HealthChange(player);
+                _hp.HealthChange();
             }
         }
     }

@@ -3,13 +3,17 @@ using UnityEngine;
 
 public class FatBird : AbstractEnemy
 {
+    [SerializeField] private float _maxJumpTime;
+    [SerializeField] private float _maxJumpHeight;
+    [SerializeField] private float _distanceToMaxJump;
+    [SerializeField] private int _groundLayer;
+    [SerializeField] private float _timeOut;
+    [SerializeField] private float _groundOffset;
     [SerializeField] private Transform _player;
     [SerializeField] private Rigidbody2D _rigidbody;
-    [SerializeField] private float _jumpTime;
-    [SerializeField] private float _jumpHeight;
-    [SerializeField] private float _timeOut;
-    [SerializeField] private int _groundLayer;
     private float _currentJumpTime;
+    private float _jumpHeight;
+    private float _jumpTime;
     private Vector3 _startPosition, _centerPosition, _endPosition;
     private bool _onTheWay = false;
     private bool _isTimeOut = false;
@@ -18,32 +22,46 @@ public class FatBird : AbstractEnemy
     {
         Rigidbody.bodyType = RigidbodyType2D.Kinematic;
         _startPosition = transform.position;
+        _jumpHeight = _maxJumpHeight;
+        _jumpTime = _maxJumpTime;
     }
 
     public override void EnemyLogic()
     {
-
+        var jumpTimeNormolize = _currentJumpTime / _jumpTime;
         if (!_onTheWay)
         {
             _currentJumpTime = 0f;
-            _startPosition = transform.position;
-            _endPosition = new Vector3(_player.position.x, _player.position.y + 2f, _startPosition.z);
-            _centerPosition.x = (_startPosition.x + _endPosition.x) / 2f;
-            _centerPosition.y = ((_startPosition.y + _endPosition.y) / 2f) + _jumpHeight;
+            SetPoints();
             Animator.SetTrigger("fall");
             _onTheWay = true;
-        } else if(_currentJumpTime / _jumpTime < 1f && !_isTimeOut)
+        } 
+        else if(jumpTimeNormolize < 1f && !_isTimeOut)
         {
             _currentJumpTime += Time.deltaTime;
             _rigidbody.MovePosition(BezierCurve(_startPosition, _centerPosition, _endPosition, _currentJumpTime / _jumpTime));
-            //transform.position = BezierCurve(_startPosition, _centerPosition, _endPosition, _currentJumpTime / _jumpTime);
         }
-        if (_currentJumpTime / _jumpTime >= 1f && !_isTimeOut)
+        if (jumpTimeNormolize >= 1f && !_isTimeOut)
         {
             Rigidbody.bodyType = RigidbodyType2D.Dynamic;
         }
+    }
 
+    private void CheckDistance(Vector3 startPosition, Vector3 endPosition)
+    {
+        var distance = Mathf.Clamp(Vector3.Distance(startPosition, endPosition), 0f, _distanceToMaxJump);
+        var distance01 = distance / _distanceToMaxJump;
+        _jumpHeight = _maxJumpHeight * distance01;
+        _jumpTime = _maxJumpTime * distance01;
+    }
 
+    private void SetPoints()
+    {
+        _startPosition = transform.position;
+        _endPosition = new Vector3(_player.position.x, _player.position.y + _groundOffset, _startPosition.z);
+        _centerPosition.x = (_startPosition.x + _endPosition.x) / 2f;
+        _centerPosition.y = ((_startPosition.y + _endPosition.y) / 2f) + _jumpHeight;
+        CheckDistance(_startPosition, _endPosition);
     }
 
     private IEnumerator TimeOut()
@@ -63,7 +81,6 @@ public class FatBird : AbstractEnemy
     private Vector2 BezierCurve(Vector2 p0, Vector2 p1, Vector2 p2, float t)
     {
         float oneMinusT = 1f - t;
-
         return (oneMinusT * oneMinusT * p0) + (2 * t * oneMinusT * p1) + (t * t * p2);
     }
 

@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 4683817294340748614}
   - component: {fileID: 4824326803497656716}
   - component: {fileID: 7482761999693159827}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Rino
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46f858da0f575d24b92f6e2b467c1d01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _collisionDamage: 2
+  _damage: 0
 --- !u!114 &4824326803497656716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,6 +218,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6654e096e96e3b4c91610cb74c0c07a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HPChange:
+    m_PersistentCalls:
+      m_Calls: []
   _maxHealth: 0
 --- !u!1 &6388305357097166232
 GameObject:
@@ -228,7 +231,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6388305357097166233}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Rino
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +265,7 @@ GameObject:
   - component: {fileID: 2237765962873500219}
   - component: {fileID: 2248147713122287282}
   - component: {fileID: 6388305358042241952}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: KillZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -35473,11 +35473,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7455348500572113123, guid: f107c257473353f4cbf706c5c98ca898, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.954
+      value: -13.13
       objectReference: {fileID: 0}
     - target: {fileID: 7455348500572113123, guid: f107c257473353f4cbf706c5c98ca898, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.993
+      value: 17.57
       objectReference: {fileID: 0}
     - target: {fileID: 7455348500572113123, guid: f107c257473353f4cbf706c5c98ca898, type: 3}
       propertyPath: m_LocalPosition.z
@@ -35522,7 +35522,7 @@ PrefabInstance:
     - target: {fileID: 7455348500572113145, guid: f107c257473353f4cbf706c5c98ca898, type: 3}
       propertyPath: HpChange.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 8699717696648955826}
+      objectReference: {fileID: 0}
     - target: {fileID: 7455348500572113145, guid: f107c257473353f4cbf706c5c98ca898, type: 3}
       propertyPath: HpChange.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -36050,14 +36050,3 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8699717695474363359, guid: 11d2a5dca76705948bed1df361d3e6de, type: 3}
   m_PrefabInstance: {fileID: 8699717696648955822}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8699717696648955826 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 248463925, guid: 11d2a5dca76705948bed1df361d3e6de, type: 3}
-  m_PrefabInstance: {fileID: 8699717696648955822}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4388713c04ec5745b29184329de95d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

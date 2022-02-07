@@ -5,6 +5,8 @@ public class PatrollingEnemy : AbstractEnemy
 {
     private EnemyMovement _movement;
 
+    public EnemyMovement Movement => _movement;
+
     private void Start()
     {
         _movement = GetComponent<EnemyMovement>();

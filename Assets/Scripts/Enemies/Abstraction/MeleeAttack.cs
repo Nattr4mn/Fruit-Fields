@@ -18,7 +18,7 @@ public class MeleeAttack : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out Player player))
         {
-            player.Health.Kill();
+            player.Kill();
             AttackEvent?.Invoke();
         }
     }

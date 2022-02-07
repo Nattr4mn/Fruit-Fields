@@ -4,18 +4,26 @@ using UnityEngine;
 
 public class PlayerCamera : MonoBehaviour
 {
+    [SerializeField] private Camera _camera;
     [SerializeField] private bool _isStatic = true;
-    [SerializeField] private Transform _target;
     [SerializeField] private float _interpolateValue = 0.2f;
 
-
-    void FixedUpdate()
+    public void Init()
     {
-        if (!_isStatic && transform.position != _target.position)
+        if (_camera == null)
+            _camera = Camera.main;
+    }
+
+    public bool TryCameraMove(Vector3 target)
+    {
+        if (!_isStatic && _camera.transform.position != target)
         {
-            var endPosition = _target.position;
-            endPosition.z = transform.position.z;
-            transform.position = Vector3.Lerp(transform.position, endPosition, _interpolateValue);
+            var endPosition = target;
+            endPosition.z = _camera.transform.position.z;
+            _camera.transform.position = Vector3.Lerp(_camera.transform.position, endPosition, _interpolateValue);
+            return true;
         }
+
+        return false;
     }
 }

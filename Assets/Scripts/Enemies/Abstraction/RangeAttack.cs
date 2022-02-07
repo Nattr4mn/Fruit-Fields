@@ -8,12 +8,19 @@ public class RangeAttack : MonoBehaviour, IAttack
     [SerializeField] private int _damage;
     [SerializeField] private float _attackDistance;
     [SerializeField] private Vector3 _attackDirection;
-    [SerializeField] private Transform _bulletContainer;
     [SerializeField] private Transform _bulletStartPosition;
     [SerializeField] private Animator _animator;
     [SerializeField] private Bullet _bulletTemplate;
+    private Transform _bulletContainer;
     private bool _isAttack = false;
     private List<Bullet> _bulletsPool = new List<Bullet>();
+
+    private void Awake()
+    {
+        GameObject gameObj = new GameObject();
+        gameObj.name = "Bullet container";
+        _bulletContainer = gameObj.transform;
+    }
 
     public void Attack()
     {

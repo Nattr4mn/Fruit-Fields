@@ -12,11 +12,11 @@ public class PlayerJump : MonoBehaviour
     private bool _inAir = false;
     private int _jumpsCount = 0;
 
-    private void Start()
+    public void Init(Animator animator, Rigidbody2D rigidbody)
     {
         _jumpsCount = _maxJumps;
-        _animator = GetComponent<Animator>();
-        _rigidbody = GetComponent<Rigidbody2D>();
+        _animator = animator;
+        _rigidbody = rigidbody;
     }
 
     public void Jump()

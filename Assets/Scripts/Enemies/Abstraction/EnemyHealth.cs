@@ -6,6 +6,8 @@ using UnityEngine.Events;
 public class EnemyHealth : MonoBehaviour
 {
     public UnityEvent<float, float> HPChange;
+    public UnityEvent Death;
+
     [SerializeField] private int _maxHealth;
     private int _currentHealth;
     private Animator _animator;
@@ -23,7 +25,11 @@ public class EnemyHealth : MonoBehaviour
         _animator.SetTrigger("hit");
         _currentHealth -= 1;
         if (_currentHealth <= 0)
+        {
+            Death?.Invoke();
             _killable.Kill();
+        }
+
 
         HPChange?.Invoke(_currentHealth, _maxHealth);
     }

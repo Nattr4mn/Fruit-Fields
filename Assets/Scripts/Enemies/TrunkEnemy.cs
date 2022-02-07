@@ -12,7 +12,6 @@ public class TrunkEnemy : RangeEnemy
     {
         base.Start();
         _movement = GetComponent<EnemyMovement>();
-        transform.position = _movement.MovementPoints[0].position;
     }
 
     public override void EnemyLogic()

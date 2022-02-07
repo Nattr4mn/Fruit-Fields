@@ -28,10 +28,10 @@ public class Spawner : MonoBehaviour
 
     private void Spawn()
     {
-        var spawn = _spawns[Random.Range(0, _spawns.Count - 1)];
+        var spawn = _spawns[Random.Range(0, _spawns.Count)];
         if (!spawn.IsOccupied)
         {
-            var enemyTemplate = _enemies[Random.Range(0, _enemies.Count - 1)];
+            var enemyTemplate = _enemies[Random.Range(0, _enemies.Count)];
             var enemy = Instantiate(enemyTemplate, spawn.transform.position, Quaternion.identity, spawn.transform);
             spawn.Init(enemy);
             _activeSpawns.Add(spawn);

@@ -21,6 +21,11 @@ public class Portal : MonoBehaviour
         }
     }
 
+    private void Show(bool value)
+    {
+        gameObject.SetActive(value);
+    }
+
     private IEnumerator BlackHole(Player player)
     {
         var spriteRenderer = player.GetComponent<SpriteRenderer>();
@@ -41,10 +46,5 @@ public class Portal : MonoBehaviour
     private void Finish()
     {
         Event?.Invoke();
-    }
-
-    private void Hidden()
-    {
-        gameObject.SetActive(false);
     }
 }

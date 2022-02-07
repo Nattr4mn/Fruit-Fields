@@ -45,7 +45,7 @@ public class FireBlock : MonoBehaviour
         {
             if(_dealsDamage)
             {
-                player.Health.HealthChange(-_damage);
+                player.Kill();
             }
         }
     }

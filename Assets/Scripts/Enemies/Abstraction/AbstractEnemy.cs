@@ -7,11 +7,13 @@ using UnityEngine;
 [RequireComponent(typeof(EnemyHealth))]
 public abstract class AbstractEnemy : MonoBehaviour
 {
-    public Animator Animator => _animator;
-    public Rigidbody2D Rigidbody => _rigidbody;
-
     private Animator _animator;
     private Rigidbody2D _rigidbody;
+    private Collider2D _collider;
+
+    public Animator Animator => _animator;
+    public Rigidbody2D Rigidbody => _rigidbody;
+    public Collider2D Collider => _collider;
 
     private void Awake()
     {

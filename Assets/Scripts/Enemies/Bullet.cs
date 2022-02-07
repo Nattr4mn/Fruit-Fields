@@ -19,7 +19,7 @@ class Bullet : MonoBehaviour
     {
         if(collision.gameObject.TryGetComponent(out Player player))
         {
-            player.Health.Kill();
+            player.Kill();
             gameObject.SetActive(false);
         }
         else

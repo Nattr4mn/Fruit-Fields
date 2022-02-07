@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2167645943714927919}
   - component: {fileID: 2167645943714927920}
   - component: {fileID: 2167645943714927921}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Target Zone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 308618815200305627}
   - component: {fileID: 6815684506560680312}
   - component: {fileID: 7789921983435962000}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Kill Zone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6815684506729225094}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Start Position
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -192,7 +192,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6815684506882260015}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Point 1
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -231,7 +231,7 @@ GameObject:
   - component: {fileID: 6815684507262323922}
   - component: {fileID: 4070550738319398926}
   - component: {fileID: 7911205155497558544}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -386,7 +386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46f858da0f575d24b92f6e2b467c1d01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _collisionDamage: 1
+  _damage: 0
 --- !u!114 &6815684507262323922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -429,6 +429,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6654e096e96e3b4c91610cb74c0c07a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HPChange:
+    m_PersistentCalls:
+      m_Calls: []
   _maxHealth: 0
 --- !u!1 &6815684508046011228
 GameObject:
@@ -439,7 +442,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6815684508046011227}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bat
   m_TagString: Untagged
   m_Icon: {fileID: 0}

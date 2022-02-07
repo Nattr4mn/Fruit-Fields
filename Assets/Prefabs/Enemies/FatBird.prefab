@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1296216951157760690}
   - component: {fileID: 4448681767388700399}
-  - component: {fileID: 3909713730804006692}
+  - component: {fileID: 2693042705763670340}
   - component: {fileID: 2904736024752816966}
   m_Layer: 11
   m_Name: KillZone
@@ -54,8 +54,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!70 &3909713730804006692
-CapsuleCollider2D:
+--- !u!61 &2693042705763670340
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -67,9 +67,19 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.14868848, y: -0.7888402}
-  m_Size: {x: 2.8400652, y: 2.7951777}
-  m_Direction: 1
+  m_Offset: {x: 0.17028809, y: -0.09496832}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.0172577, y: 1.1899366}
+  m_EdgeRadius: 0
 --- !u!114 &2904736024752816966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,8 +236,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.069698334, y: -0.50647926}
-  m_Size: {x: 4.3712463, y: 5.1098146}
+  m_Offset: {x: -0.069698334, y: -0.8241317}
+  m_Size: {x: 4.3712463, y: 4.4745097}
   m_Direction: 0
 --- !u!114 &8056224217892412842
 MonoBehaviour:
@@ -274,7 +284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b5855ac7bdfc13448eeb6365e425f91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _killableCollider: {fileID: 3909713730804006692}
+  _killableCollider: {fileID: 0}
 --- !u!114 &2441741787223890763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,5 +311,20 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+  Death:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
   _maxHealth: 20

@@ -168,7 +168,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 33c94827e7894824d88c13ce77103953, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0883d05f49794384f92e944109daccd5, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0
   m_Pitch: 1
@@ -266,7 +266,6 @@ GameObject:
   - component: {fileID: 8082582171624805241}
   - component: {fileID: 8082582171624805242}
   - component: {fileID: 8082582171624805247}
-  - component: {fileID: 483642488499029745}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -368,21 +367,6 @@ MonoBehaviour:
     - PinkMan
   _music: {fileID: 8082582170683605925}
   _effects: {fileID: 8082582169948779788}
---- !u!114 &483642488499029745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8082582171624805243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 104357b4261ee2e479092dfc5ff61840, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isStatic: 1
-  _target: {fileID: 0}
-  _interpolateValue: 0.2
 --- !u!1001 &1645871143604488894
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -402,6 +386,10 @@ PrefabInstance:
       propertyPath: _flowSpeed
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1545698025003045206, guid: a3b7cc0cfb217c149851ae6b107035b9, type: 3}
+      propertyPath: _background
+      value: 
+      objectReference: {fileID: 3403550087994786435, guid: 16583ab0f783bde4480e2eb9a96b2c7d, type: 3}
     - target: {fileID: 1545698025003045207, guid: a3b7cc0cfb217c149851ae6b107035b9, type: 3}
       propertyPath: m_RootOrder
       value: 2

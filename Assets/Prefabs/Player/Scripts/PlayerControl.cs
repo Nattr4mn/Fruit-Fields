@@ -13,6 +13,11 @@ public class PlayerControl : MonoBehaviour
         _player.Movement.Direction(Vector3.right);
     }
 
+    public void Move()
+    {
+        _player.Movement.TryMove();
+    }
+
     public void Stop()
     {
         _player.Movement.Direction(Vector3.zero);

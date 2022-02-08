@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3778970161376938449}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Point 1
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3778970161528431859}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Saw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3778970163111947829}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Point 2
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -109,7 +109,9 @@ GameObject:
   - component: {fileID: 4090899973697887398}
   - component: {fileID: 1651580315704724822}
   - component: {fileID: 7320051437607642119}
-  m_Layer: 0
+  - component: {fileID: 9165858220502731465}
+  - component: {fileID: 9209191226572811081}
+  m_Layer: 7
   m_Name: Saw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -249,9 +251,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c663b06bb38bcc40b521aed2119cfe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 3778970163237909579}
-  _rigidbody: {fileID: 3778970163237909583}
-  _movement: {fileID: 1651580315704724822}
 --- !u!114 &1651580315704724822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,4 +280,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46f858da0f575d24b92f6e2b467c1d01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _collisionDamage: 2
+  _damage: 0
+--- !u!114 &9165858220502731465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3778970163237909622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b5855ac7bdfc13448eeb6365e425f91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _killableCollider: {fileID: 0}
+--- !u!114 &9209191226572811081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3778970163237909622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6654e096e96e3b4c91610cb74c0c07a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HPChange:
+    m_PersistentCalls:
+      m_Calls: []
+  Death:
+    m_PersistentCalls:
+      m_Calls: []
+  _maxHealth: 0

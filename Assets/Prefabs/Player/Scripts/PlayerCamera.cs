@@ -20,7 +20,7 @@ public class PlayerCamera : MonoBehaviour
         {
             var endPosition = target;
             endPosition.z = _camera.transform.position.z;
-            _camera.transform.position = Vector3.Lerp(_camera.transform.position, endPosition, _interpolateValue);
+            _camera.transform.position = Vector3.Lerp(_camera.transform.position, endPosition, _interpolateValue * Time.deltaTime);
             return true;
         }
 

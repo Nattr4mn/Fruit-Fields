@@ -68,7 +68,7 @@ public class Player : MonoBehaviour
         if(!_isDead)
         {
             _isDead = true;
-            Handheld.Vibrate();
+            _playerMovement.IsStoped = true;
             _tossableObject.Toss();
             _animator.SetTrigger("death");
             StartCoroutine(KillTimeOut());

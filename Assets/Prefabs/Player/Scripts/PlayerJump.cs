@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
@@ -7,6 +9,9 @@ public class PlayerJump : MonoBehaviour
     [SerializeField] private float _jumpForce;
     [SerializeField] private int _maxJumps = 2;
     [SerializeField] private GroundChecker _groundChecker;
+    [SerializeField] private ParticleSystem _jumpParticle;
+    [SerializeField] private Transform _jumpParticlePostion;
+    private List<ParticleSystem> _particlePool = new List<ParticleSystem>();
     private Rigidbody2D _rigidbody;
     private Animator _animator;
     private bool _inAir = false;
@@ -21,17 +26,28 @@ public class PlayerJump : MonoBehaviour
 
     public void Jump()
     {
-        if (CheckGround() || _jumpsCount > 0)
+        if ((CheckGround() || _jumpsCount > 0) || (!CheckGround() && !_inAir))
         {
             _jumpsCount--;
             _animator.SetTrigger("jump");
             _rigidbody.velocity = Vector2.up * _jumpForce;
+            PlayParticle();
+
         }
-        else if (!CheckGround() && !_inAir)
+    }
+
+    private void PlayParticle()
+    {
+        var particle = _particlePool.FirstOrDefault(effect => effect.isStopped);
+        if (particle == null)
         {
-            _jumpsCount -= _maxJumps;
-            _animator.SetTrigger("jump");
-            _rigidbody.velocity = Vector2.up * _jumpForce;
+            var effect = Instantiate(_jumpParticle, _jumpParticlePostion.position, Quaternion.identity);
+            _particlePool.Add(effect);
+        }
+        else
+        {
+            particle.transform.position = _jumpParticlePostion.position;
+            particle.Play();
         }
     }
 

@@ -13982,6 +13982,10 @@ PrefabInstance:
       propertyPath: HpChange.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7774201183975097328, guid: f107c257473353f4cbf706c5c98ca898, type: 3}
+      propertyPath: _isStatic
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f107c257473353f4cbf706c5c98ca898, type: 3}
 --- !u!4 &7455348501473165838 stripped

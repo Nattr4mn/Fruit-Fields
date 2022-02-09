@@ -9,6 +9,7 @@ public class LoadLevel : MonoBehaviour
     }
     public void ReloadCurrentLevel()
     {
+        print(SceneManager.GetActiveScene().buildIndex);
         Load(SceneManager.GetActiveScene().buildIndex);
     }
 }

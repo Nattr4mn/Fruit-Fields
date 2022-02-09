@@ -15,9 +15,21 @@ public class FinishWindow : MonoBehaviour
     public void Finish()
     {
         _effectsSource.PlayOneShot(_winSound);
-        _scoreText.text = _fruitsSpawner.CollectedFruits.ToString() + " / " + _fruitsSpawner.TotalFruit.ToString();
+        _scoreText.text = _fruitsSpawner.CollectedFruits.ToString() + " / " + _fruitsSpawner.TotalFruits.ToString();
         SaveProgress();
         StartCoroutine(ActivatedStars());
+    }
+
+    public int ConvertFruitsToStars()
+    {
+        int stars = 0;
+        int maxStars = _starsObjects.Count;
+        if (_fruitsSpawner.TotalStars > 0)
+        {
+            stars += _fruitsSpawner.CollectedStars;
+        }
+        stars += Mathf.RoundToInt((maxStars - _fruitsSpawner.TotalStars) * (_fruitsSpawner.CollectedFruits / _fruitsSpawner.TotalFruits));
+        return stars;
     }
 
     private void SaveProgress()
@@ -29,16 +41,13 @@ public class FinishWindow : MonoBehaviour
 
     private IEnumerator ActivatedStars()
     {
-        var procent = 0.3f;
-
-        foreach(var star in _starsObjects)
+        int stars = ConvertFruitsToStars();
+        int starsCount = 0;
+        while(starsCount != stars)
         {
-            if(_fruitsSpawner.CollectedFruits >= _fruitsSpawner.TotalFruit * procent)
-            {
-                star.SetActive(true);
-                yield return new WaitForSeconds(0.3f);
-                procent += 0.3f;
-            }
+            _starsObjects[starsCount].SetActive(true);
+            yield return new WaitForSeconds(0.3f);
+            starsCount++;
         }
     }
 }

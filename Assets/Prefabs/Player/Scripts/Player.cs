@@ -77,11 +77,11 @@ public class Player : MonoBehaviour
 
     private IEnumerator KillTimeOut()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.25f);
         _rigidbody.velocity = Vector3.zero;
         _rigidbody.bodyType = RigidbodyType2D.Kinematic;
         yield return new WaitForSeconds(0.5f);
         LoadLevel loadLevel = new LoadLevel();
-        loadLevel.Load(SceneManager.GetActiveScene().buildIndex);
+        loadLevel.ReloadCurrentLevel();
     }
 }

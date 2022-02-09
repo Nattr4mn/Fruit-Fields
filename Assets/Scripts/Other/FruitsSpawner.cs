@@ -1,35 +1,47 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class FruitsSpawner : MonoBehaviour
 {
-    public int CollectedFruits => _collectedFruits;
-    public int TotalFruit => _totalFruits;
-
-    [SerializeField] private List<Transform> _spawnPoints;
+    public event Action CollectionComplete;
     [SerializeField] private List<Fruit> _fruits;
-    [SerializeField] private Fruit _star;
+    [SerializeField] private List<Transform> _spawnPoints;
+    [SerializeField] private List<Fruit> _stars;
+    [SerializeField] private int  _maxStars;
     [SerializeField] private AudioClip _fruitSoundClip;
     [SerializeField] private AudioSource _soundEffectSource;
-    private int _totalFruits = 0;
-    private int _collectedFruits = 0;
+    private int _totalFruits;
+    private int _collectedFruits;
+    private int _totalStars;
+    private int _collectedStars;
 
-    private void Start()
+    public int CollectedFruits => _collectedFruits;
+    public int TotalFruits => _totalFruits;
+    public int CollectedStars => _collectedStars;
+    public int TotalStars => _totalStars;
+
+    private void OnValidate()
     {
-        if (_star != null)
+        if(_stars?.Count > _maxStars)
         {
-            _star.FruitCollected += StarIsCollected;
-            _totalFruits = _spawnPoints.Count + (int)(_spawnPoints.Count * 0.15f);
+            _stars = _stars.GetRange(0, _maxStars);
         }
-        else
+    }
+
+    private void Awake()
+    {
+        if (_stars != null)
         {
-            _totalFruits = _spawnPoints.Count;
+            _stars.ForEach(star => star.FruitCollected += StarIsCollected);
+            _totalStars = _stars.Count;
         }
+
+        _totalFruits = _spawnPoints.Count;
 
         foreach (var spawnPoint in _spawnPoints)
         {
-            var randomFruit = _fruits[Random.Range(0, _fruits.Count - 1)];
+            var randomFruit = _fruits[UnityEngine.Random.Range(0, _fruits.Count - 1)];
             var fruit = Instantiate(randomFruit, spawnPoint.position, Quaternion.identity, spawnPoint);
             fruit.FruitCollected += FruitIsCollected;
         }
@@ -39,11 +51,14 @@ public class FruitsSpawner : MonoBehaviour
     {
         _collectedFruits++;
         _soundEffectSource.PlayOneShot(_fruitSoundClip);
+
+        if(_collectedFruits == _totalFruits)
+            CollectionComplete?.Invoke();
     }
 
     private void StarIsCollected()
     {
-        _collectedFruits+= (int)(_spawnPoints.Count * 0.15f);
+        _collectedStars++;
         _soundEffectSource.PlayOneShot(_fruitSoundClip);
     }
 }

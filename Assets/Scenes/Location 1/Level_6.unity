@@ -19996,6 +19996,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1314589426}
     - target: {fileID: 3788136553060679273, guid: 82735b4a131e14144976904dd97417eb, type: 3}
+      propertyPath: _maxStars
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3788136553060679273, guid: 82735b4a131e14144976904dd97417eb, type: 3}
       propertyPath: _fruitSound
       value: 
       objectReference: {fileID: 8300000, guid: e89f03dcb3533c9468c8aa15e24c10ad, type: 3}
@@ -20008,9 +20012,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: e89f03dcb3533c9468c8aa15e24c10ad, type: 3}
     - target: {fileID: 3788136553060679273, guid: 82735b4a131e14144976904dd97417eb, type: 3}
+      propertyPath: _stars.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3788136553060679273, guid: 82735b4a131e14144976904dd97417eb, type: 3}
       propertyPath: _soundEffectSource
       value: 
       objectReference: {fileID: 1664844787}
+    - target: {fileID: 3788136553060679273, guid: 82735b4a131e14144976904dd97417eb, type: 3}
+      propertyPath: _stars.Array.data[0]
+      value: 
+      objectReference: {fileID: 1724598928}
     - target: {fileID: 3788136553060679273, guid: 82735b4a131e14144976904dd97417eb, type: 3}
       propertyPath: _spawnPoints.Array.size
       value: 30
@@ -20276,6 +20288,10 @@ PrefabInstance:
     - target: {fileID: 7455348500631235924, guid: f107c257473353f4cbf706c5c98ca898, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7774201183975097328, guid: f107c257473353f4cbf706c5c98ca898, type: 3}
+      propertyPath: _isStatic
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f107c257473353f4cbf706c5c98ca898, type: 3}

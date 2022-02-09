@@ -52999,21 +52999,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1908873533}
     m_Modifications:
-    - target: {fileID: 249584402971132605, guid: f107c257473353f4cbf706c5c98ca898, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5694085957994818533, guid: f107c257473353f4cbf706c5c98ca898, type: 3}
-      propertyPath: _isStatic
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7455348500572113120, guid: f107c257473353f4cbf706c5c98ca898, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7455348500572113120, guid: f107c257473353f4cbf706c5c98ca898, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7455348500572113123, guid: f107c257473353f4cbf706c5c98ca898, type: 3}
       propertyPath: m_RootOrder
@@ -53059,12 +53047,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7774201183975097328, guid: f107c257473353f4cbf706c5c98ca898, type: 3}
-      propertyPath: _isStatic
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7455348500572113145, guid: f107c257473353f4cbf706c5c98ca898, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f107c257473353f4cbf706c5c98ca898, type: 3}
 --- !u!4 &7455348501473165838 stripped
 Transform:

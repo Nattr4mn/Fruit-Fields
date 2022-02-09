@@ -21316,7 +21316,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 644335007}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.74, y: -0.94, z: -2}
+  m_LocalPosition: {x: -15.74, y: -1, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 102848092}
@@ -26555,7 +26555,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2008849466}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.5, y: 0, z: -1}
+  m_LocalPosition: {x: 14.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8518601224480579403}
@@ -26701,6 +26701,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7774201183975097328, guid: f107c257473353f4cbf706c5c98ca898, type: 3}
+      propertyPath: _isStatic
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f107c257473353f4cbf706c5c98ca898, type: 3}
 --- !u!114 &7455348501473165838 stripped
@@ -26719,17 +26723,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7455348500572113123, guid: f107c257473353f4cbf706c5c98ca898, type: 3}
   m_PrefabInstance: {fileID: 7455348501473165837}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7455348501473165840 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7455348500572113145, guid: f107c257473353f4cbf706c5c98ca898, type: 3}
-  m_PrefabInstance: {fileID: 7455348501473165837}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cb72669aad29d344a018b745d99ddd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &8518601224480579402
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26858,7 +26851,7 @@ PrefabInstance:
     - target: {fileID: 248463925, guid: 11d2a5dca76705948bed1df361d3e6de, type: 3}
       propertyPath: _playerHealth
       value: 
-      objectReference: {fileID: 7455348501473165840}
+      objectReference: {fileID: 0}
     - target: {fileID: 1068980786376941975, guid: 11d2a5dca76705948bed1df361d3e6de, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

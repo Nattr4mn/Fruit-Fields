@@ -10,7 +10,7 @@ public class Localization : MonoBehaviour
     private Dictionary<string, string> _localization;
     private string _language;
 
-    public void Initialization()
+    public void Init()
     {
         if (Instance != null)
         {

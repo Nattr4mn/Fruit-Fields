@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97d13fe1b3ccbd84c97b6d71a8440a79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hp: {fileID: 438031876267676754}
+  _enemyHealth: {fileID: 438031876267676754}
 --- !u!1 &7216301795173809298
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,7 +141,6 @@ GameObject:
   - component: {fileID: 7216301795419549636}
   - component: {fileID: 7216301795419549637}
   - component: {fileID: 5509919510864609604}
-  - component: {fileID: 6384133855155555383}
   - component: {fileID: 438031876267676754}
   m_Layer: 7
   m_Name: Trunk
@@ -205,7 +204,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -5219337101871392587, guid: 18e7ce996eb365348aaa78e97e2cad8d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -295,10 +294,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50803988c7b060f48b9cf231ae39d44e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _visionDistance: 10
-  _triggerMask:
-    serializedVersion: 2
-    m_Bits: 512
 --- !u!114 &7216301795419549638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,11 +306,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89118a2c3c8a7d540ac1054b9449beb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animator: {fileID: 0}
+  _rigidbody: {fileID: 0}
+  _collider: {fileID: 0}
+  _health: {fileID: 0}
+  _attack: {fileID: 0}
+  _healthPoint: 1
   _visionDirections:
   - {x: -1, y: 0, z: 0}
   - {x: 1, y: 0, z: 0}
-  _vision: {fileID: 0}
+  _visionDistance: 10
+  _triggerMask:
+    serializedVersion: 2
+    m_Bits: 512
+  _attackDistance: 10
+  _attackDirection: {x: 1, y: 0, z: 0}
+  _bulletStartPosition: {fileID: 7216301795173809297}
+  _bulletTemplate: {fileID: 1009360060812078876, guid: bea9412f494fc1749aea678601ae21d3, type: 3}
   _angryTime: 2
+  _movementPoints: []
+  _speed: 2.5
+  _pauseTime: 3
 --- !u!114 &7216301795419549636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,9 +339,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d08abc74d31e32c4f9b8f6d6378e8cff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 2
-  _movementPoints: []
-  _pauseTime: 2
 --- !u!114 &7216301795419549637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,7 +351,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 120c9ba84ea3e2f47b0f78c77f63f70a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 1
   _attackDistance: 10
   _attackDirection: {x: 1, y: 0, z: 0}
   _bulletStartPosition: {fileID: 7216301795173809297}
@@ -361,20 +368,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46f858da0f575d24b92f6e2b467c1d01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 0
---- !u!114 &6384133855155555383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7216301795419549644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b5855ac7bdfc13448eeb6365e425f91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _killableCollider: {fileID: 7216301794385862931}
 --- !u!114 &438031876267676754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,4 +383,6 @@ MonoBehaviour:
   HPChange:
     m_PersistentCalls:
       m_Calls: []
-  _maxHealth: 1
+  EnemyDead:
+    m_PersistentCalls:
+      m_Calls: []

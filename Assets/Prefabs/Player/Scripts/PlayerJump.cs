@@ -11,6 +11,8 @@ public class PlayerJump : MonoBehaviour
     [SerializeField] private GroundChecker _groundChecker;
     [SerializeField] private ParticleSystem _jumpParticle;
     [SerializeField] private Transform _jumpParticlePostion;
+    [SerializeField] private AudioSource _soundEffect;
+    [SerializeField] private AudioClip _jumpSound;
     private List<ParticleSystem> _particlePool = new List<ParticleSystem>();
     private Rigidbody2D _rigidbody;
     private Animator _animator;
@@ -28,11 +30,11 @@ public class PlayerJump : MonoBehaviour
     {
         if ((CheckGround() || _jumpsCount > 0) || (!CheckGround() && !_inAir))
         {
+            _soundEffect.PlayOneShot(_jumpSound);
             _jumpsCount--;
             _animator.SetTrigger("jump");
             _rigidbody.velocity = Vector2.up * _jumpForce;
             PlayParticle();
-
         }
     }
 

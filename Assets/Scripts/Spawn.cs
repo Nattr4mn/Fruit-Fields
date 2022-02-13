@@ -14,7 +14,7 @@ public class Spawn : MonoBehaviour
     public void Init(EnemyMovement enemy)
     {
         _enemy = enemy;
-        enemy.Init(_points);
+        _enemy.Init(_points);
         _isOccupied = true;
     }
 

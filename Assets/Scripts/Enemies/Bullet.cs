@@ -2,17 +2,15 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-class Bullet : MonoBehaviour
+public class Bullet : MonoBehaviour
 {
     [SerializeField] private Transform _bullet;
     [SerializeField] private float _speed;
     private float _lifeDistance;
-    private int _bulletDamage;
 
-    public void Initialized(float lifeDistance, int bulletDamage)
+    public void Init(float lifeDistance)
     {
         _lifeDistance = lifeDistance;
-        _bulletDamage = bulletDamage;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

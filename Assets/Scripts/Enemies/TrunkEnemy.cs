@@ -1,17 +1,25 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(EnemyMovement))]
 public class TrunkEnemy : RangeEnemy
 {
     [SerializeField] private float _angryTime;
+
+    [Header("Movement settings")]
+    [SerializeField] private List<Transform> _movementPoints;
+    [SerializeField] private float _speed;
+    [SerializeField] private float _pauseTime;
+
     private EnemyMovement _movement;
     private bool _isAngry = false;
 
-    protected override void Start()
+    protected override void Awake()
     {
-        base.Start();
+        base.Awake();
         _movement = GetComponent<EnemyMovement>();
+        _movement.Init(_speed, _pauseTime, _movementPoints);
     }
 
     public override void EnemyLogic()

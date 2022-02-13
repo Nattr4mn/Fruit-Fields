@@ -11,13 +11,17 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(PlayerCamera))]
 public class Player : MonoBehaviour
 {
+    public event Action PlayerDead;
     private PlayerMovement _playerMovement;
     private PlayerJump _playerJump;
     private TossableObject _tossableObject;
     private Rigidbody2D _rigidbody;
     private Animator _animator;
     private PlayerCamera _playerCamera;
+    private InterstititalAds _interstititalAds;
     private bool _isDead = false;
+    [SerializeField] private AudioSource _soundEffect;
+    [SerializeField] private AudioClip _hitSound;
 
     public PlayerMovement Movement => _playerMovement;
     public PlayerJump Jump => _playerJump;
@@ -32,6 +36,7 @@ public class Player : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _playerCamera = GetComponent<PlayerCamera>();
+        _interstititalAds = FindObjectOfType<InterstititalAds>();
 
         _playerMovement.Init(_animator, _rigidbody);
         _playerJump.Init(_animator, _rigidbody);
@@ -67,11 +72,23 @@ public class Player : MonoBehaviour
     {
         if(!_isDead)
         {
+            _soundEffect.PlayOneShot(_hitSound);
             _isDead = true;
             _playerMovement.IsStoped = true;
             _tossableObject.Toss();
             _animator.SetTrigger("death");
+            CalculateDeath();
             StartCoroutine(KillTimeOut());
+        }
+    }
+
+    private void CalculateDeath()
+    {
+        PlayerPrefs.SetInt("DeadCount", PlayerPrefs.GetInt("DeadCount") + 1);
+        if (PlayerPrefs.GetInt("DeadCount") == 3)
+        {
+            _interstititalAds.Show();
+            PlayerPrefs.SetInt("DeadCount", 0);
         }
     }
 

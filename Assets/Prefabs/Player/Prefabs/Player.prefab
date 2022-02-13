@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 7455348500572113122}
   - component: {fileID: 5614731705827770631}
   - component: {fileID: 3167655498359799759}
-  - component: {fileID: 7774201183975097328}
+  - component: {fileID: 179649847484939820}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -241,8 +241,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.029445171, y: -0.19465005}
-  m_Size: {x: 1.3131361, y: 1.5671928}
+  m_Offset: {x: 0.029445171, y: -0.17973804}
+  m_Size: {x: 1.3131361, y: 1.5970168}
   m_Direction: 0
 --- !u!114 &7455348500572113151
 MonoBehaviour:
@@ -256,6 +256,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d807910564eddb438a5ac1233f33dfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _soundEffect: {fileID: 0}
+  _hitSound: {fileID: 8300000, guid: 0f7b5ad26b887df4cbb68002cc7dc9c3, type: 3}
 --- !u!114 &7455348500572113122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,6 +289,8 @@ MonoBehaviour:
   _groundChecker: {fileID: 9172483755528935027}
   _jumpParticle: {fileID: 737913003696188762, guid: 8fd8ec67dd2f4e34fabee683ff169cc7, type: 3}
   _jumpParticlePostion: {fileID: 6102529774443551563}
+  _soundEffect: {fileID: 0}
+  _jumpSound: {fileID: 8300000, guid: 1a57b819ac87bc44b8c19ee649d0fe29, type: 3}
 --- !u!114 &3167655498359799759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,7 +304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tossForce: 15
---- !u!114 &7774201183975097328
+--- !u!114 &179649847484939820
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -313,8 +317,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 0}
-  _isStatic: 0
+  _isStatic: 1
   _interpolateValue: 3
+  _minPoint: {fileID: 0}
+  _maxPoint: {fileID: 0}
 --- !u!1 &7455348501815029652
 GameObject:
   m_ObjectHideFlags: 0

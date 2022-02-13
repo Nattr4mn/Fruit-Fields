@@ -28,15 +28,16 @@ public class Portal : MonoBehaviour
 
     private IEnumerator BlackHole(Player player)
     {
-        var spriteRenderer = player.GetComponent<SpriteRenderer>();
-        float progress = spriteRenderer.color.a;
+        float progress = player.transform.localScale.x;
 
         player.Movement.Direction(Vector3.zero);
 
         while (progress > 0)
         {
-            progress -= 0.01f;
-            spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, progress);
+            progress -= 0.05f;
+            player.Rigidbody.bodyType = RigidbodyType2D.Kinematic;
+            player.transform.position = Vector3.MoveTowards(player.transform.position, transform.position, 5f * Time.deltaTime);
+            player.transform.localScale = new Vector3(progress, progress, transform.localScale.z);
             yield return null;
         }
 

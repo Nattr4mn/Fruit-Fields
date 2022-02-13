@@ -1,3 +1,4 @@
+using GoogleMobileAds.Api;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -20,6 +21,20 @@ public class FinishWindow : MonoBehaviour
         StartCoroutine(ActivatedStars());
     }
 
+    public void Reward()
+    {
+        RewardedAds rewardedAds = FindObjectOfType<RewardedAds>();
+        rewardedAds.Show();
+        rewardedAds.RewardedAd.OnUserEarnedReward += RewardedComplete;
+    }
+
+    private void RewardedComplete(object sender, Reward args)
+    {
+        Save.Instance.GameData.Fruits += _fruitsSpawner.CollectedFruits;
+        int collectedFruits = _fruitsSpawner.CollectedFruits * 2;
+        _scoreText.text = collectedFruits.ToString() + " / " + _fruitsSpawner.TotalFruits.ToString();
+    }
+
     public int ConvertFruitsToStars()
     {
         int stars = 0;
@@ -28,7 +43,7 @@ public class FinishWindow : MonoBehaviour
         {
             stars += _fruitsSpawner.CollectedStars;
         }
-        stars += Mathf.RoundToInt((maxStars - _fruitsSpawner.TotalStars) * (_fruitsSpawner.CollectedFruits / _fruitsSpawner.TotalFruits));
+        stars += Mathf.RoundToInt((maxStars - _fruitsSpawner.TotalStars) * (_fruitsSpawner.CollectedFruits / (float)_fruitsSpawner.TotalFruits));
         return stars;
     }
 

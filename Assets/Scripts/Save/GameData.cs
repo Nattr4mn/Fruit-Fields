@@ -7,6 +7,7 @@ using UnityEngine;
 public class GameData
 {
     public float SoundEffectVolume = 1f;
+    public float UISoundVolume = 1f;
     public float MusicVolume = 1f;
     public string Language = "russian";
     public string SkinName = "PinkMan";

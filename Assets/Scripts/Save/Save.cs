@@ -5,24 +5,26 @@ using UnityEngine.Events;
 
 public class Save : MonoBehaviour
 {
-    public static Save Instance { get; private set; }
     public UnityEvent LoadComplete;
 
     public GameData GameData;
 
     [SerializeField] private string _saveFileName = "GameData";
 
+    public static Save Instance { get; private set; }
+
     private void Awake()
     {
         if(Instance != null)
         {
-            Debug.LogError("Save object is already exist!");
+            Debug.LogWarning("Save object is already exist!");
         }
         else
         {
             Instance = this;
             Instance.LoadData();
-            DontDestroyOnLoad(this);
+            PlayerPrefs.SetInt("DeadCount", 0);
+            DontDestroyOnLoad(Instance);
         }
     }
 

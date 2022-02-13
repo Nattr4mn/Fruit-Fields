@@ -79,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 8834383540189861523, guid: f68a93d3cfdb90442a677b24828c4e3b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -159,6 +159,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c663b06bb38bcc40b521aed2119cfe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animator: {fileID: 4388917509472361100}
+  _rigidbody: {fileID: 4388917509472361089}
+  _collider: {fileID: 4388917509472361090}
+  _health: {fileID: 9169672795120511339}
+  _attack: {fileID: 4388917509472361101}
+  _healthPoint: 3
+  _movementPoints: []
+  _speed: 2
+  _pauseTime: 3
 --- !u!114 &4388917509472361101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,7 +180,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46f858da0f575d24b92f6e2b467c1d01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 0
 --- !u!114 &4388917509472361102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,9 +192,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d08abc74d31e32c4f9b8f6d6378e8cff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 2
-  _movementPoints: []
-  _pauseTime: 3
 --- !u!114 &6543081624702840367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,7 +204,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b5855ac7bdfc13448eeb6365e425f91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _killableCollider: {fileID: 4553752486491143742}
+  _animator: {fileID: 0}
+  _enemy: {fileID: 0}
 --- !u!114 &9169672795120511339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,7 +221,9 @@ MonoBehaviour:
   HPChange:
     m_PersistentCalls:
       m_Calls: []
-  _maxHealth: 3
+  EnemyDead:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4388917510648907558
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,8 +234,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4388917510648907557}
   - component: {fileID: 7365306130376079239}
-  - component: {fileID: 8696861121889314265}
   - component: {fileID: 4553752486491143742}
+  - component: {fileID: 8696861121889314265}
   m_Layer: 7
   m_Name: KillZone
   m_TagString: Untagged
@@ -270,19 +278,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8696861121889314265
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4388917510648907558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97d13fe1b3ccbd84c97b6d71a8440a79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _hp: {fileID: 9169672795120511339}
 --- !u!61 &4553752486491143742
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -309,3 +304,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.4905226}
   m_EdgeRadius: 0
+--- !u!114 &8696861121889314265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4388917510648907558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97d13fe1b3ccbd84c97b6d71a8440a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyHealth: {fileID: 9169672795120511339}

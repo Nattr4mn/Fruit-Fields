@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97d13fe1b3ccbd84c97b6d71a8440a79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hp: {fileID: 2441741787223890763}
+  _enemyHealth: {fileID: 2441741787223890763}
 --- !u!1 &8056224217892412833
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,7 +108,6 @@ GameObject:
   - component: {fileID: 6281110558668343301}
   - component: {fileID: 8056224217892412842}
   - component: {fileID: 8056224217892412843}
-  - component: {fileID: 1589925555060292054}
   - component: {fileID: 2441741787223890763}
   m_Layer: 11
   m_Name: FatBird
@@ -171,7 +170,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -8116256361858104333, guid: 1d9565c4fc3c776468c771175de4deea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -251,7 +250,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46f858da0f575d24b92f6e2b467c1d01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 0
 --- !u!114 &8056224217892412843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,6 +262,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a2b618fc8167484f98c836f13d95cca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animator: {fileID: 0}
+  _rigidbody: {fileID: 8056224217892412845}
+  _collider: {fileID: 0}
+  _health: {fileID: 0}
+  _attack: {fileID: 0}
+  _healthPoint: 20
   _maxJumpTime: 2
   _maxJumpHeight: 15
   _distanceToMaxJump: 15
@@ -271,20 +275,6 @@ MonoBehaviour:
   _timeOut: 2
   _groundOffset: 5
   _player: {fileID: 0}
-  _rigidbody: {fileID: 8056224217892412845}
---- !u!114 &1589925555060292054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8056224217892412833}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b5855ac7bdfc13448eeb6365e425f91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _killableCollider: {fileID: 0}
 --- !u!114 &2441741787223890763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,19 +302,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  Death:
+  EnemyDead:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  _maxHealth: 20
+      m_Calls: []

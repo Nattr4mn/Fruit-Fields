@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6726799205203753838}
   - component: {fileID: 541601712514157516}
+  - component: {fileID: 5014267052771028464}
   - component: {fileID: 5161064563581552071}
-  - component: {fileID: 5932413272009393699}
   m_Layer: 7
   m_Name: KillZone
   m_TagString: Untagged
@@ -54,6 +54,32 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!61 &5014267052771028464
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6726799205203753837}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.010174453, y: 0.13989878}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.65406847, y: 0.47262418}
+  m_EdgeRadius: 0
 --- !u!114 &5161064563581552071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,23 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97d13fe1b3ccbd84c97b6d71a8440a79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hp: {fileID: 4052043020106855250}
---- !u!58 &5932413272009393699
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6726799205203753837}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.3
+  _enemyHealth: {fileID: 4052043020106855250}
 --- !u!1 &6726799206379644611
 GameObject:
   m_ObjectHideFlags: 0
@@ -99,7 +109,6 @@ GameObject:
   - component: {fileID: 6726799206379644619}
   - component: {fileID: 6726799206379644614}
   - component: {fileID: 6726799206379644613}
-  - component: {fileID: 2199278457960574321}
   - component: {fileID: 4052043020106855250}
   m_Layer: 7
   m_Name: Bunny
@@ -162,7 +171,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 3450125647347128806, guid: f1444e86d55d4c2459a06443bb1ece6f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -227,8 +236,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.056997895, y: -0.37971973}
-  m_Size: {x: 0.84699535, y: 1.4405608}
+  m_Offset: {x: 0.056997895, y: -0.49156344}
+  m_Size: {x: 0.84699535, y: 1.1928318}
   m_Direction: 0
 --- !u!114 &6726799206379644619
 MonoBehaviour:
@@ -242,6 +251,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c663b06bb38bcc40b521aed2119cfe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animator: {fileID: 0}
+  _rigidbody: {fileID: 0}
+  _collider: {fileID: 0}
+  _health: {fileID: 0}
+  _attack: {fileID: 0}
+  _healthPoint: 2
+  _movementPoints: []
+  _speed: 5
+  _pauseTime: 3
 --- !u!114 &6726799206379644614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,7 +272,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46f858da0f575d24b92f6e2b467c1d01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 0
 --- !u!114 &6726799206379644613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,22 +284,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d08abc74d31e32c4f9b8f6d6378e8cff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 5
-  _movementPoints: []
-  _pauseTime: 5
---- !u!114 &2199278457960574321
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6726799206379644611}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b5855ac7bdfc13448eeb6365e425f91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _killableCollider: {fileID: 5932413272009393699}
 --- !u!114 &4052043020106855250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,4 +299,6 @@ MonoBehaviour:
   HPChange:
     m_PersistentCalls:
       m_Calls: []
-  _maxHealth: 0
+  EnemyDead:
+    m_PersistentCalls:
+      m_Calls: []

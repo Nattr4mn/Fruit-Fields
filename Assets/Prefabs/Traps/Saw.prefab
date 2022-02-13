@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3778970161376938462}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 9.5, z: 0}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3778970161528431859}
@@ -87,7 +87,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3778970163111947826}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3778970161528431859}
@@ -106,11 +106,9 @@ GameObject:
   - component: {fileID: 3778970163237909579}
   - component: {fileID: 3778970163237909582}
   - component: {fileID: 3778970163237909583}
-  - component: {fileID: 4090899973697887398}
-  - component: {fileID: 1651580315704724822}
-  - component: {fileID: 7320051437607642119}
-  - component: {fileID: 9165858220502731465}
-  - component: {fileID: 9209191226572811081}
+  - component: {fileID: 4533619504771023034}
+  - component: {fileID: 7502222958635226095}
+  - component: {fileID: 2345735064991957030}
   m_Layer: 7
   m_Name: Saw
   m_TagString: Untagged
@@ -126,7 +124,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3778970163237909622}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 9.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3778970161528431859}
@@ -171,7 +169,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: dd177437eefe07b42a7224b7a4297143, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -239,7 +237,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4090899973697887398
+--- !u!114 &4533619504771023034
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -248,27 +246,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 3778970163237909622}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c663b06bb38bcc40b521aed2119cfe1, type: 3}
+  m_Script: {fileID: 11500000, guid: 4ecf19310bc439d41aec5605382318e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1651580315704724822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3778970163237909622}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d08abc74d31e32c4f9b8f6d6378e8cff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 10
   _movementPoints:
   - {fileID: 3778970161376938449}
   - {fileID: 3778970163111947829}
-  _pauseTime: 0
---- !u!114 &7320051437607642119
+  _speed: 10
+--- !u!114 &7502222958635226095
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -280,8 +265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46f858da0f575d24b92f6e2b467c1d01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 0
---- !u!114 &9165858220502731465
+--- !u!114 &2345735064991957030
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -290,26 +274,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 3778970163237909622}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b5855ac7bdfc13448eeb6365e425f91, type: 3}
+  m_Script: {fileID: 11500000, guid: d08abc74d31e32c4f9b8f6d6378e8cff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _killableCollider: {fileID: 0}
---- !u!114 &9209191226572811081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3778970163237909622}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6654e096e96e3b4c91610cb74c0c07a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HPChange:
-    m_PersistentCalls:
-      m_Calls: []
-  Death:
-    m_PersistentCalls:
-      m_Calls: []
-  _maxHealth: 0

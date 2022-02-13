@@ -6,7 +6,6 @@ public class Spawner : MonoBehaviour
 {
     [SerializeField] private List<EnemyMovement> _enemies;
     [SerializeField] private List<Spawn> _spawns;
-    [SerializeField] private float _timeToSpawn;
     [SerializeField] private int _maxEnemiesOnMap;
     private List<Spawn> _activeSpawns;
 
@@ -23,7 +22,6 @@ public class Spawner : MonoBehaviour
             Spawn();
 
         CheckSpawns();
-
     }
 
     private void Spawn()

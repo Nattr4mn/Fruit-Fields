@@ -5,20 +5,22 @@ using UnityEngine;
 [RequireComponent(typeof(EnemyMovement))]
 public class BatEnemy : AbstractEnemy
 {
-    [SerializeField] private EnemyMovement _movement;
+    [Header("Movement settings")]
+    [SerializeField] private List<Transform> _movementPoints;
+    [SerializeField] private float _speed;
+    [SerializeField] private float _pauseTime;
     [SerializeField] private TargetZone _targetZone;
+    private EnemyMovement _movement;
     private bool _inMove = false;
     private bool _isSleep = true;
     private Vector3 _startPosition;
 
-    private void Start()
+
+    protected override void Awake()
     {
-        if (_movement == null)
-            _movement = GetComponent<EnemyMovement>();
-
-        if (_targetZone == null)
-            _targetZone = GetComponentInChildren<TargetZone>();
-
+        base.Awake();
+        _movement = GetComponent<EnemyMovement>();
+        _movement.Init(_speed, _pauseTime, _movementPoints);
         _startPosition = _movement.MovementPoints[0].position;
     }
 

@@ -44082,6 +44082,10 @@ PrefabInstance:
       value: 4.187
       objectReference: {fileID: 0}
     - target: {fileID: 1292940151877334408, guid: cb75bd00ca6c1114db26acd118c73236, type: 3}
+      propertyPath: _soundEffect
+      value: 
+      objectReference: {fileID: 8082582171506210558}
+    - target: {fileID: 1292940151877334408, guid: cb75bd00ca6c1114db26acd118c73236, type: 3}
       propertyPath: _movementPoints.Array.data[0]
       value: 
       objectReference: {fileID: 93978970}
@@ -48093,6 +48097,10 @@ PrefabInstance:
       propertyPath: _speed
       value: 2.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7378379235687549703, guid: b08f7f8843a50d7478785a947e103af2, type: 3}
+      propertyPath: _soundEffect
+      value: 
+      objectReference: {fileID: 8082582171506210558}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b08f7f8843a50d7478785a947e103af2, type: 3}
 --- !u!1001 &1499130336019985748
@@ -48102,6 +48110,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1715919638}
     m_Modifications:
+    - target: {fileID: 1292940151877334408, guid: cb75bd00ca6c1114db26acd118c73236, type: 3}
+      propertyPath: _soundEffect
+      value: 
+      objectReference: {fileID: 8082582171506210558}
     - target: {fileID: 1292940151877334409, guid: cb75bd00ca6c1114db26acd118c73236, type: 3}
       propertyPath: m_BodyType
       value: 1

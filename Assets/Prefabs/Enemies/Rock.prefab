@@ -165,6 +165,8 @@ MonoBehaviour:
   _health: {fileID: 9169672795120511339}
   _attack: {fileID: 4388917509472361101}
   _healthPoint: 3
+  _soundEffect: {fileID: 0}
+  _hitSound: {fileID: 8300000, guid: 0f7b5ad26b887df4cbb68002cc7dc9c3, type: 3}
   _movementPoints: []
   _speed: 2
   _pauseTime: 3

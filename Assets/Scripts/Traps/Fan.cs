@@ -8,6 +8,7 @@ public class Fan : MonoBehaviour
     [SerializeField] private float _fanForce = 20f;
     [SerializeField] private float _pauseTime = 2f;
     [SerializeField] private float _pauseEverySeconds = 2f;
+    [SerializeField] private Collider2D _collider;
     private Animator _animator;
     private bool _isActive = true;
     private float _timer = 0f;
@@ -38,10 +39,12 @@ public class Fan : MonoBehaviour
     private IEnumerator Pause()
     {
         _isActive = false;
+        _collider.enabled = false;
         _animator.SetBool("active", _isActive);
         yield return new WaitForSeconds(_pauseTime);
         _timer = 0f;
         _isActive = true;
+        _collider.enabled = true;
         _animator.SetBool("active", _isActive);
     }
 }

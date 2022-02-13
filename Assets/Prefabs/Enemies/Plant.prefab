@@ -279,6 +279,8 @@ MonoBehaviour:
   _health: {fileID: 0}
   _attack: {fileID: 0}
   _healthPoint: 1
+  _soundEffect: {fileID: 0}
+  _hitSound: {fileID: 8300000, guid: 0f7b5ad26b887df4cbb68002cc7dc9c3, type: 3}
   _visionDirections:
   - {x: 1, y: 0, z: 0}
   - {x: -1, y: 0, z: 0}

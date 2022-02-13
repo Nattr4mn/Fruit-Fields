@@ -89,6 +89,7 @@ public class FatBird : AbstractEnemy
         if(collision.gameObject.layer == _groundLayer && !_isTimeOut && _onTheWay)
         {
             _isTimeOut = true;
+            Rigidbody.velocity = Vector2.zero;
             Rigidbody.bodyType = RigidbodyType2D.Kinematic;
             Animator.SetTrigger("ground");
             StartCoroutine(TimeOut());

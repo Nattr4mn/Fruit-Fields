@@ -173,6 +173,7 @@ MonoBehaviour:
   _fanForce: 10
   _pauseTime: 2
   _pauseEverySeconds: 2
+  _collider: {fileID: 2335846143505992990}
 --- !u!114 &5574114294741717606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,7 +186,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46f858da0f575d24b92f6e2b467c1d01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _collisionDamage: 2
-  _collisionEvent:
-    m_PersistentCalls:
-      m_Calls: []

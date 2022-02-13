@@ -839,6 +839,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7378379235687549703, guid: b08f7f8843a50d7478785a947e103af2, type: 3}
+      propertyPath: _soundEffect
+      value: 
+      objectReference: {fileID: 1664844787}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b08f7f8843a50d7478785a947e103af2, type: 3}
 --- !u!4 &500126953 stripped
@@ -18764,6 +18768,10 @@ PrefabInstance:
       propertyPath: _bulletContainer
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5842630317801725959, guid: 1fa9d79c3e899d34ea7dcbaf0b603340, type: 3}
+      propertyPath: _soundEffect
+      value: 
+      objectReference: {fileID: 1664844787}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fa9d79c3e899d34ea7dcbaf0b603340, type: 3}
 --- !u!4 &1353904118 stripped
@@ -19326,6 +19334,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -5.25
       objectReference: {fileID: 0}
+    - target: {fileID: 1292940151877334408, guid: cb75bd00ca6c1114db26acd118c73236, type: 3}
+      propertyPath: _soundEffect
+      value: 
+      objectReference: {fileID: 1664844787}
     - target: {fileID: 1499130336333825853, guid: cb75bd00ca6c1114db26acd118c73236, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.5

@@ -39,7 +39,6 @@ public class EnemyHealth : MonoBehaviour
             Kill();
         }
 
-
         HPChange?.Invoke(_currentHealth, _healthPoint);
     }
 

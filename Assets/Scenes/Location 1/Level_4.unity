@@ -2572,6 +2572,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5842630317801725959, guid: 1fa9d79c3e899d34ea7dcbaf0b603340, type: 3}
+      propertyPath: _soundEffect
+      value: 
+      objectReference: {fileID: 1664844787}
+    - target: {fileID: 5842630317801725959, guid: 1fa9d79c3e899d34ea7dcbaf0b603340, type: 3}
       propertyPath: _attackDistance
       value: 6
       objectReference: {fileID: 0}
@@ -13220,6 +13224,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1642551369}
     m_Modifications:
+    - target: {fileID: 1292940151877334408, guid: cb75bd00ca6c1114db26acd118c73236, type: 3}
+      propertyPath: _soundEffect
+      value: 
+      objectReference: {fileID: 1664844787}
     - target: {fileID: 1499130336333825853, guid: cb75bd00ca6c1114db26acd118c73236, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.14
@@ -13796,6 +13804,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1642551369}
     m_Modifications:
+    - target: {fileID: 5393843386521594969, guid: 4cbbabba23869394aba7f58c8ad5dd03, type: 3}
+      propertyPath: _soundEffect
+      value: 
+      objectReference: {fileID: 1664844787}
     - target: {fileID: 8516965243274016448, guid: 4cbbabba23869394aba7f58c8ad5dd03, type: 3}
       propertyPath: m_RootOrder
       value: 2

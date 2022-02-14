@@ -5,6 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(Vision))]
 public class RinoEnemy : AbstractEnemy
 {
+    [SerializeField] private AudioClip _run;
+
+    [Header("Other settings")]
     [SerializeField] private float _speed;
     [SerializeField] private float _pauseAfterCollision;
     [SerializeField] private GameObject _killZone;
@@ -45,6 +48,8 @@ public class RinoEnemy : AbstractEnemy
     private void Run()
     {
         Animator.SetBool("running", true);
+        AudioSource.clip = _run;
+        AudioSource.Play();
         _killZone.SetActive(false);
         _isRunning = true;
     }
@@ -56,6 +61,8 @@ public class RinoEnemy : AbstractEnemy
             _isRunning = false;
             Animator.SetBool("running", false);
             Animator.SetTrigger("hitWall");
+            AudioSource.Stop();
+            AudioSource.PlayOneShot(HitClip);
             _killZone.SetActive(true);
             StartCoroutine(PauseAfterCollision());
             Rigidbody.velocity = Vector2.zero;

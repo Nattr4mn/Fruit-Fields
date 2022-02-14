@@ -5682,6 +5682,10 @@ PrefabInstance:
       value: 4.742
       objectReference: {fileID: 0}
     - target: {fileID: 1292940151877334408, guid: cb75bd00ca6c1114db26acd118c73236, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 1664844787}
+    - target: {fileID: 1292940151877334408, guid: cb75bd00ca6c1114db26acd118c73236, type: 3}
       propertyPath: _soundEffect
       value: 
       objectReference: {fileID: 1664844787}
@@ -9923,8 +9927,8 @@ Tilemap:
   - first: {x: -10, y: -7, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 13
-      m_TileSpriteIndex: 13
+      m_TileIndex: 8
+      m_TileSpriteIndex: 5
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -15908,7 +15912,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 9f2e565f1de9d914c84c9fe6003da58e, type: 2}
   - m_RefCount: 15
     m_Data: {fileID: 11400000, guid: bf8c49de048b4414a8271de8ea905cd8, type: 2}
-  - m_RefCount: 4
+  - m_RefCount: 5
     m_Data: {fileID: 11400000, guid: dddfb4af9874c0a47880e4e46d3e7552, type: 2}
   - m_RefCount: 5
     m_Data: {fileID: 11400000, guid: 8af7757122fd47e41a801b9e154e7ea3, type: 2}
@@ -15918,7 +15922,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: bfeff314c671db54aa0c2d4be629a54e, type: 2}
   - m_RefCount: 6
     m_Data: {fileID: 11400000, guid: 20d22f84603d52d4d8c54077a50a23c6, type: 2}
-  - m_RefCount: 31
+  - m_RefCount: 30
     m_Data: {fileID: 11400000, guid: 4cfed68bd204bde4faa74bf834dd638b, type: 2}
   - m_RefCount: 6
     m_Data: {fileID: 11400000, guid: 41b54d09e75bd0643a06b5a1194646c0, type: 2}
@@ -15961,7 +15965,7 @@ Tilemap:
     m_Data: {fileID: -7788903373117692988, guid: 3f7d09e2b9bc5f2428df81e7b1434351, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -1385159882611531606, guid: 3f7d09e2b9bc5f2428df81e7b1434351, type: 3}
-  - m_RefCount: 4
+  - m_RefCount: 5
     m_Data: {fileID: 3020870990670601969, guid: 3f7d09e2b9bc5f2428df81e7b1434351, type: 3}
   - m_RefCount: 5
     m_Data: {fileID: -8620202154233844528, guid: 3f7d09e2b9bc5f2428df81e7b1434351, type: 3}
@@ -15977,7 +15981,7 @@ Tilemap:
     m_Data: {fileID: 4716054802376701170, guid: 3f7d09e2b9bc5f2428df81e7b1434351, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: 397718093594370940, guid: 3f7d09e2b9bc5f2428df81e7b1434351, type: 3}
-  - m_RefCount: 31
+  - m_RefCount: 30
     m_Data: {fileID: -7517053698926566003, guid: 3f7d09e2b9bc5f2428df81e7b1434351, type: 3}
   - m_RefCount: 6
     m_Data: {fileID: -1968872540364177098, guid: 3f7d09e2b9bc5f2428df81e7b1434351, type: 3}
@@ -16091,9 +16095,17 @@ CompositeCollider2D:
         Y: -80000000
       - X: -80000000
         Y: -70000000
-      - X: -90000000
+      - X: -89999900
         Y: -70000000
-      - X: -90000000
+      - X: -89999900
+        Y: -59999959
+      - X: -89999959
+        Y: -59999900
+      - X: -100000041
+        Y: -59999900
+      - X: -100000100
+        Y: -59999959
+      - X: -100000100
         Y: -60000000
       - X: -150000000
         Y: -60000000
@@ -16198,8 +16210,8 @@ CompositeCollider2D:
       - {x: -7.0000296, y: -8}
       - {x: -8, y: -7.9999704}
       - {x: -8.00003, y: -7}
-      - {x: -9, y: -6.9999704}
-      - {x: -9.00003, y: -6}
+      - {x: -8.99999, y: -6.9999704}
+      - {x: -9.000026, y: -5.99999}
       - {x: -15, y: -5.9999704}
       - {x: -15.000029, y: -4}
       - {x: -17, y: -3.9999704}
@@ -16370,6 +16382,10 @@ PrefabInstance:
       value: -5.7
       objectReference: {fileID: 0}
     - target: {fileID: 7378379235687549703, guid: b08f7f8843a50d7478785a947e103af2, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 1664844787}
+    - target: {fileID: 7378379235687549703, guid: b08f7f8843a50d7478785a947e103af2, type: 3}
       propertyPath: _soundEffect
       value: 
       objectReference: {fileID: 1664844787}
@@ -16447,7 +16463,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8082582171624805240, guid: 68e91bc9a6a43a74b818ed6f572fa336, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 8082582171624805240, guid: 68e91bc9a6a43a74b818ed6f572fa336, type: 3}
       propertyPath: m_LocalRotation.w
@@ -16517,7 +16533,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1691277611}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14, y: -5.012, z: -2}
+  m_LocalPosition: {x: -14, y: -5.012, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1664844788}
@@ -16586,6 +16602,10 @@ PrefabInstance:
       propertyPath: _bulletContainer
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5842630317801725959, guid: 1fa9d79c3e899d34ea7dcbaf0b603340, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 1664844787}
     - target: {fileID: 5842630317801725959, guid: 1fa9d79c3e899d34ea7dcbaf0b603340, type: 3}
       propertyPath: _soundEffect
       value: 
@@ -17124,7 +17144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7455348500572113123, guid: f107c257473353f4cbf706c5c98ca898, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 7455348500572113123, guid: f107c257473353f4cbf706c5c98ca898, type: 3}
       propertyPath: m_LocalRotation.w

@@ -2572,6 +2572,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5842630317801725959, guid: 1fa9d79c3e899d34ea7dcbaf0b603340, type: 3}
+      propertyPath: _hit
+      value: 
+      objectReference: {fileID: 8300000, guid: 28e8c6e5c02f142418ebd588ca4fed8f, type: 3}
+    - target: {fileID: 5842630317801725959, guid: 1fa9d79c3e899d34ea7dcbaf0b603340, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 1664844787}
+    - target: {fileID: 5842630317801725959, guid: 1fa9d79c3e899d34ea7dcbaf0b603340, type: 3}
       propertyPath: _soundEffect
       value: 
       objectReference: {fileID: 1664844787}
@@ -12972,7 +12980,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1626825426}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16, y: -4.012, z: -2}
+  m_LocalPosition: {x: -16, y: -4.012, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1664844788}
@@ -13076,7 +13084,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8082582171624805240, guid: 68e91bc9a6a43a74b818ed6f572fa336, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 8082582171624805240, guid: 68e91bc9a6a43a74b818ed6f572fa336, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13224,6 +13232,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1642551369}
     m_Modifications:
+    - target: {fileID: 1292940151877334408, guid: cb75bd00ca6c1114db26acd118c73236, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 1664844787}
     - target: {fileID: 1292940151877334408, guid: cb75bd00ca6c1114db26acd118c73236, type: 3}
       propertyPath: _soundEffect
       value: 
@@ -13724,7 +13736,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7455348500572113123, guid: f107c257473353f4cbf706c5c98ca898, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 7455348500572113123, guid: f107c257473353f4cbf706c5c98ca898, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13804,6 +13816,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1642551369}
     m_Modifications:
+    - target: {fileID: 5393843386521594969, guid: 4cbbabba23869394aba7f58c8ad5dd03, type: 3}
+      propertyPath: _hit
+      value: 
+      objectReference: {fileID: 8300000, guid: 28e8c6e5c02f142418ebd588ca4fed8f, type: 3}
+    - target: {fileID: 5393843386521594969, guid: 4cbbabba23869394aba7f58c8ad5dd03, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 1664844787}
     - target: {fileID: 5393843386521594969, guid: 4cbbabba23869394aba7f58c8ad5dd03, type: 3}
       propertyPath: _soundEffect
       value: 

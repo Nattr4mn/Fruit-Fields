@@ -237,12 +237,13 @@ MonoBehaviour:
   _health: {fileID: 0}
   _attack: {fileID: 0}
   _healthPoint: 20
-  _soundEffect: {fileID: 0}
-  _hitSound: {fileID: 8300000, guid: 0f7b5ad26b887df4cbb68002cc7dc9c3, type: 3}
   _speed: 15
   _pauseAfterCollision: 5
   _killZone: {fileID: 6388305358042241982}
   _wallMask: 12
+  _audioSource: {fileID: 0}
+  _run: {fileID: 8300000, guid: 0f7b5ad26b887df4cbb68002cc7dc9c3, type: 3}
+  _hit: {fileID: 8300000, guid: 28e8c6e5c02f142418ebd588ca4fed8f, type: 3}
   _vision: {fileID: 5455320614365940742}
   _visionDistance: 15
   _triggerMask:

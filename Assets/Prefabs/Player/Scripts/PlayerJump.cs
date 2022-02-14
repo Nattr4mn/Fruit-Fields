@@ -6,6 +6,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerJump : MonoBehaviour
 {
+    public bool LockJump = false;
+
     [SerializeField] private float _jumpForce;
     [SerializeField] private int _maxJumps = 2;
     [SerializeField] private GroundChecker _groundChecker;
@@ -28,13 +30,20 @@ public class PlayerJump : MonoBehaviour
 
     public void Jump()
     {
-        if ((CheckGround() || _jumpsCount > 0) || (!CheckGround() && !_inAir))
+        if(!LockJump)
         {
-            _soundEffect.PlayOneShot(_jumpSound);
-            _jumpsCount--;
-            _animator.SetTrigger("jump");
-            _rigidbody.velocity = Vector2.up * _jumpForce;
-            PlayParticle();
+            if ((CheckGround() || _jumpsCount > 0) || (!CheckGround() && !_inAir))
+            {
+                _soundEffect.PlayOneShot(_jumpSound);
+                _jumpsCount--;
+                _animator.SetTrigger("jump");
+                _rigidbody.velocity = Vector2.up * _jumpForce;
+                PlayParticle();
+            }
+        }
+        else
+        {
+            throw new System.Exception("Jump is lock!");
         }
     }
 

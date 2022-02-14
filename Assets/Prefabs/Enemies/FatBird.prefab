@@ -268,8 +268,8 @@ MonoBehaviour:
   _health: {fileID: 0}
   _attack: {fileID: 0}
   _healthPoint: 20
-  _soundEffect: {fileID: 0}
-  _hitSound: {fileID: 8300000, guid: 0f7b5ad26b887df4cbb68002cc7dc9c3, type: 3}
+  _audioSource: {fileID: 0}
+  _hit: {fileID: 8300000, guid: 28e8c6e5c02f142418ebd588ca4fed8f, type: 3}
   _maxJumpTime: 2
   _maxJumpHeight: 15
   _distanceToMaxJump: 15
@@ -277,6 +277,7 @@ MonoBehaviour:
   _timeOut: 2
   _groundOffset: 5
   _player: {fileID: 0}
+  _jump: {fileID: 8300000, guid: 338cd66137b07d7448c84a1cf7323a49, type: 3}
 --- !u!114 &2441741787223890763
 MonoBehaviour:
   m_ObjectHideFlags: 0

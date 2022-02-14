@@ -18,6 +18,12 @@ public class BackgroundGenerator : MonoBehaviour
         GenerateBackground(_background);
     }
 
+    public void Init(SpriteRenderer background, int offsetSignX, int offsetSignY)
+    {
+        _background = background;
+        _offsetSignX = offsetSignX;
+        _offsetSignY = offsetSignY;
+    }
 
     private void GenerateBackground(SpriteRenderer background)
     {

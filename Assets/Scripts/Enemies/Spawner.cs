@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] private List<EnemyMovement> _enemies;
+    [SerializeField] private List<PatrollingEnemy> _enemies;
     [SerializeField] private List<Spawn> _spawns;
     [SerializeField] private int _maxEnemiesOnMap;
+    [SerializeField] private AudioSource _audioSource;
     private List<Spawn> _activeSpawns;
 
     private int _quantityEnemiesOnMap = 0;
@@ -31,7 +32,7 @@ public class Spawner : MonoBehaviour
         {
             var enemyTemplate = _enemies[Random.Range(0, _enemies.Count)];
             var enemy = Instantiate(enemyTemplate, spawn.transform.position, Quaternion.identity, spawn.transform);
-            spawn.Init(enemy);
+            spawn.Init(enemy, _audioSource);
             _activeSpawns.Add(spawn);
             _quantityEnemiesOnMap++;
         }

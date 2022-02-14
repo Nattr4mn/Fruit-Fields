@@ -75,6 +75,7 @@ public class Player : MonoBehaviour
             _soundEffect.PlayOneShot(_hitSound);
             _isDead = true;
             _playerMovement.IsStoped = true;
+            _playerJump.LockJump = true;
             _tossableObject.Toss();
             _animator.SetTrigger("death");
             CalculateDeath();

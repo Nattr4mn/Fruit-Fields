@@ -13,6 +13,8 @@ public class EnemyHealth : MonoBehaviour
     private Animator _animator;
     private Rigidbody2D _rigidbody;
     private Collider2D _collider;
+    private AudioSource _audioSource;
+    private AudioClip _hit;
 
     public int HealthPoint => _healthPoint;
     public int CurrentHealth => _currentHealth;
@@ -29,10 +31,17 @@ public class EnemyHealth : MonoBehaviour
         _currentHealth = _healthPoint;
     }
 
+    public void InitSound(AudioSource audioSource, AudioClip hit)
+    {
+        _audioSource = audioSource;
+        _hit = hit;
+    }
+
     public void HealthChange(int points)
     {
         _animator.SetTrigger("hit");
         _currentHealth += points;
+        _audioSource?.PlayOneShot(_hit);
         if (_currentHealth <= 0)
         {
             EnemyDead?.Invoke();

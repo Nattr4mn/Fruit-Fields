@@ -35,7 +35,7 @@ public class AmbientVolume : MonoBehaviour
 
     public void MusicVolumeChange(float value)
     {
-        _ambientSource.volume = value;
+        Instance.AmbientSource.volume = value;
         Save.Instance.GameData.MusicVolume = value;
     }
 

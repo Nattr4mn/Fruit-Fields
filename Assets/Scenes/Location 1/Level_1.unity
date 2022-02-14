@@ -44082,6 +44082,14 @@ PrefabInstance:
       value: 4.187
       objectReference: {fileID: 0}
     - target: {fileID: 1292940151877334408, guid: cb75bd00ca6c1114db26acd118c73236, type: 3}
+      propertyPath: _hit
+      value: 
+      objectReference: {fileID: 8300000, guid: 28e8c6e5c02f142418ebd588ca4fed8f, type: 3}
+    - target: {fileID: 1292940151877334408, guid: cb75bd00ca6c1114db26acd118c73236, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 8082582171506210558}
+    - target: {fileID: 1292940151877334408, guid: cb75bd00ca6c1114db26acd118c73236, type: 3}
       propertyPath: _soundEffect
       value: 
       objectReference: {fileID: 8082582171506210558}
@@ -44495,7 +44503,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -48094,9 +48102,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7378379235687549703, guid: b08f7f8843a50d7478785a947e103af2, type: 3}
+      propertyPath: _hit
+      value: 
+      objectReference: {fileID: 8300000, guid: 28e8c6e5c02f142418ebd588ca4fed8f, type: 3}
+    - target: {fileID: 7378379235687549703, guid: b08f7f8843a50d7478785a947e103af2, type: 3}
       propertyPath: _speed
       value: 2.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7378379235687549703, guid: b08f7f8843a50d7478785a947e103af2, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 8082582171506210558}
     - target: {fileID: 7378379235687549703, guid: b08f7f8843a50d7478785a947e103af2, type: 3}
       propertyPath: _soundEffect
       value: 
@@ -48110,6 +48126,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1715919638}
     m_Modifications:
+    - target: {fileID: 1292940151877334408, guid: cb75bd00ca6c1114db26acd118c73236, type: 3}
+      propertyPath: _hit
+      value: 
+      objectReference: {fileID: 8300000, guid: 28e8c6e5c02f142418ebd588ca4fed8f, type: 3}
+    - target: {fileID: 1292940151877334408, guid: cb75bd00ca6c1114db26acd118c73236, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 8082582171506210558}
     - target: {fileID: 1292940151877334408, guid: cb75bd00ca6c1114db26acd118c73236, type: 3}
       propertyPath: _soundEffect
       value: 
@@ -48567,7 +48591,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7455348500572113123, guid: f107c257473353f4cbf706c5c98ca898, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 7455348500572113123, guid: f107c257473353f4cbf706c5c98ca898, type: 3}
       propertyPath: m_LocalRotation.w

@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.Events;
@@ -32,10 +31,11 @@ public class Save : MonoBehaviour
     {
         var path = LoadPath();
         if(File.Exists(path))
-        {
             Instance.GameData = JsonUtility.FromJson<GameData>(File.ReadAllText(path));
-            Instance.LoadComplete.Invoke();
-        }
+        else
+            Instance.GameData = new GameData();
+
+        Instance.LoadComplete.Invoke();
     }
 
     private void SaveData()

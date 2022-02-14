@@ -60,8 +60,9 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   GameData:
-    SoundEffectVolume: 1
-    MusicVolume: 1
+    SoundEffectVolume: 0.5
+    UISoundVolume: 0.5
+    MusicVolume: 0.5
     Language: russian
     SkinName: PinkMan
     Fruits: 0

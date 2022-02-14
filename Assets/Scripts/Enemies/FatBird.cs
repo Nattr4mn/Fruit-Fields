@@ -10,6 +10,7 @@ public class FatBird : AbstractEnemy
     [SerializeField] private float _timeOut;
     [SerializeField] private float _groundOffset;
     [SerializeField] private Transform _player;
+    [SerializeField] private AudioClip _jump;
     private float _currentJumpTime;
     private float _jumpHeight;
     private float _jumpTime;
@@ -35,6 +36,7 @@ public class FatBird : AbstractEnemy
             _currentJumpTime = 0f;
             SetPoints();
             Animator.SetTrigger("fall");
+            AudioSource.PlayOneShot(_jump);
         } 
         else if(jumpTimeNormolize < 1f && !_isTimeOut)
         {
@@ -92,6 +94,7 @@ public class FatBird : AbstractEnemy
             Rigidbody.velocity = Vector2.zero;
             Rigidbody.bodyType = RigidbodyType2D.Kinematic;
             Animator.SetTrigger("ground");
+            AudioSource.PlayOneShot(HitClip);
             StartCoroutine(TimeOut());
         }
     }

@@ -257,7 +257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _soundEffect: {fileID: 0}
-  _hitSound: {fileID: 8300000, guid: 0f7b5ad26b887df4cbb68002cc7dc9c3, type: 3}
+  _hitSound: {fileID: 8300000, guid: 3a58696ba11c4414cab586efeebbca52, type: 3}
 --- !u!114 &7455348500572113122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,6 +284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aa19d2628f049340afedcb62e2a011f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LockJump: 0
   _jumpForce: 15
   _maxJumps: 2
   _groundChecker: {fileID: 9172483755528935027}

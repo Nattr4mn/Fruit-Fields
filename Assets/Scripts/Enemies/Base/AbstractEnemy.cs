@@ -14,11 +14,17 @@ public abstract class AbstractEnemy : MonoBehaviour
     [SerializeField] private MeleeAttack _attack;
     [SerializeField] private int _healthPoint;
 
+    [Header("Audio settings")]
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip _hit;
+
     public Animator Animator => _animator;
     public Rigidbody2D Rigidbody => _rigidbody;
     public Collider2D Collider => _collider;
     public EnemyHealth Health => _health;
     public MeleeAttack Attack => _attack;
+    public AudioSource AudioSource => _audioSource;
+    public AudioClip HitClip => _hit;
 
     protected virtual void Awake()
     {
@@ -34,6 +40,7 @@ public abstract class AbstractEnemy : MonoBehaviour
             _attack = GetComponent<MeleeAttack>();
 
         _health.Init(_animator, _collider, _rigidbody, _healthPoint);
+        _health.InitSound(_audioSource, _hit);
         _health.EnemyDead.AddListener(EnemyDisable);
     }
 

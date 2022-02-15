@@ -9,6 +9,7 @@ public class FatBird : AbstractEnemy
     [SerializeField] private int _groundLayer;
     [SerializeField] private float _timeOut;
     [SerializeField] private float _groundOffset;
+    [SerializeField] private KillZone _killzone;
     [SerializeField] private Transform _player;
     [SerializeField] private AudioClip _jump;
     private float _currentJumpTime;
@@ -34,6 +35,7 @@ public class FatBird : AbstractEnemy
         {
             _onTheWay = true;
             _currentJumpTime = 0f;
+            _killzone.gameObject.SetActive(false);
             SetPoints();
             Animator.SetTrigger("fall");
             AudioSource.PlayOneShot(_jump);
@@ -91,6 +93,7 @@ public class FatBird : AbstractEnemy
         if(collision.gameObject.layer == _groundLayer && !_isTimeOut && _onTheWay)
         {
             _isTimeOut = true;
+            _killzone.gameObject.SetActive(true);
             Rigidbody.velocity = Vector2.zero;
             Rigidbody.bodyType = RigidbodyType2D.Kinematic;
             Animator.SetTrigger("ground");

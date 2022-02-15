@@ -276,6 +276,7 @@ MonoBehaviour:
   _groundLayer: 6
   _timeOut: 2
   _groundOffset: 5
+  _killzone: {fileID: 2904736024752816966}
   _player: {fileID: 0}
   _jump: {fileID: 8300000, guid: 338cd66137b07d7448c84a1cf7323a49, type: 3}
 --- !u!114 &2441741787223890763

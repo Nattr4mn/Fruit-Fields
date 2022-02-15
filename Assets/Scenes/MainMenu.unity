@@ -1269,7 +1269,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Fruit Madness
+  m_text: Fruit Fields
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 662e971b7a2cc3a44976126f00a78070, type: 2}
   m_sharedMaterial: {fileID: -1918377038847693331, guid: 662e971b7a2cc3a44976126f00a78070, type: 2}

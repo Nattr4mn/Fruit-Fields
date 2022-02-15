@@ -28,7 +28,10 @@ public class Bullet : MonoBehaviour
 
     public void Shot(Vector3 startPosition, Vector3 direction)
     {
-        _bullet.rotation = Quaternion.Euler(direction.normalized * 180f);
+        if(direction.x > 0)
+            _bullet.rotation = Quaternion.Euler(0f, 180f, 0f);
+        else
+            _bullet.rotation = Quaternion.Euler(0f, 0f, 0f);
         StartCoroutine(BulletFlight(startPosition, direction));
     }
 

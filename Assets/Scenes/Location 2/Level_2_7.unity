@@ -438,7 +438,7 @@ PrefabInstance:
     - target: {fileID: 262373434783751144, guid: 68e91bc9a6a43a74b818ed6f572fa336, type: 3}
       propertyPath: _background
       value: 
-      objectReference: {fileID: 3403550087994786435, guid: 5274874354b9f3145883d934442fb912, type: 3}
+      objectReference: {fileID: 3403550087994786435, guid: d850a601dad511f468bfb78aa004fa35, type: 3}
     - target: {fileID: 483642488499029745, guid: 68e91bc9a6a43a74b818ed6f572fa336, type: 3}
       propertyPath: _target
       value: 

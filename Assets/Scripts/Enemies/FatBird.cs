@@ -31,7 +31,7 @@ public class FatBird : AbstractEnemy
     public override void EnemyLogic()
     {
         var jumpTimeNormolize = _currentJumpTime / _jumpTime;
-        if (!_onTheWay)
+        if (!_onTheWay && _player.gameObject.activeInHierarchy)
         {
             _onTheWay = true;
             _currentJumpTime = 0f;

@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     [SerializeField] private AudioSource _soundEffect;
     [SerializeField] private AudioClip _hitSound;
 
+    public bool IsDead => _isDead;
     public PlayerMovement Movement => _playerMovement;
     public PlayerJump Jump => _playerJump;
     public TossableObject Tossable => _tossableObject;
@@ -72,8 +73,8 @@ public class Player : MonoBehaviour
     {
         if(!_isDead)
         {
-            _soundEffect.PlayOneShot(_hitSound);
             _isDead = true;
+            _soundEffect.PlayOneShot(_hitSound);
             _playerMovement.IsStoped = true;
             _playerJump.LockJump = true;
             _tossableObject.Toss();

@@ -6,7 +6,6 @@ public class PlayerMovement : MonoBehaviour
 {
     public bool IsStoped = false;
 
-
     [SerializeField] private float _playerSpeed;
     private Rigidbody2D _rigidbody;
     private Animator _animator;

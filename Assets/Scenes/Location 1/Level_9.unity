@@ -59478,7 +59478,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7455348500572113122, guid: f107c257473353f4cbf706c5c98ca898, type: 3}
   m_PrefabInstance: {fileID: 7455348501473165837}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 7455348501473165839}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fac0ccb26a0dc944791049de478f9e32, type: 3}
@@ -59489,7 +59489,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7455348500572113151, guid: f107c257473353f4cbf706c5c98ca898, type: 3}
   m_PrefabInstance: {fileID: 7455348501473165837}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 7455348501473165839}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d807910564eddb438a5ac1233f33dfb, type: 3}
@@ -73843,7 +73843,7 @@ PrefabInstance:
       objectReference: {fileID: 90599514}
     - target: {fileID: 2441741787223890763, guid: 6d52bd8e8337035459e100dbbb5ed4a5, type: 3}
       propertyPath: EnemyDead.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2441741787223890763, guid: 6d52bd8e8337035459e100dbbb5ed4a5, type: 3}
       propertyPath: Death.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -73851,6 +73851,10 @@ PrefabInstance:
       objectReference: {fileID: 370904425}
     - target: {fileID: 2441741787223890763, guid: 6d52bd8e8337035459e100dbbb5ed4a5, type: 3}
       propertyPath: EnemyDead.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2441741787223890763, guid: 6d52bd8e8337035459e100dbbb5ed4a5, type: 3}
+      propertyPath: EnemyDead.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2441741787223890763, guid: 6d52bd8e8337035459e100dbbb5ed4a5, type: 3}
@@ -73862,7 +73866,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 370904425}
     - target: {fileID: 2441741787223890763, guid: 6d52bd8e8337035459e100dbbb5ed4a5, type: 3}
+      propertyPath: EnemyDead.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1864713753}
+    - target: {fileID: 2441741787223890763, guid: 6d52bd8e8337035459e100dbbb5ed4a5, type: 3}
       propertyPath: EnemyDead.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2441741787223890763, guid: 6d52bd8e8337035459e100dbbb5ed4a5, type: 3}
+      propertyPath: EnemyDead.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2441741787223890763, guid: 6d52bd8e8337035459e100dbbb5ed4a5, type: 3}
@@ -73870,7 +73882,15 @@ PrefabInstance:
       value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 2441741787223890763, guid: 6d52bd8e8337035459e100dbbb5ed4a5, type: 3}
+      propertyPath: EnemyDead.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 2441741787223890763, guid: 6d52bd8e8337035459e100dbbb5ed4a5, type: 3}
       propertyPath: EnemyDead.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2441741787223890763, guid: 6d52bd8e8337035459e100dbbb5ed4a5, type: 3}
+      propertyPath: EnemyDead.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2441741787223890763, guid: 6d52bd8e8337035459e100dbbb5ed4a5, type: 3}
@@ -73878,7 +73898,15 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2441741787223890763, guid: 6d52bd8e8337035459e100dbbb5ed4a5, type: 3}
+      propertyPath: EnemyDead.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2441741787223890763, guid: 6d52bd8e8337035459e100dbbb5ed4a5, type: 3}
       propertyPath: EnemyDead.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2441741787223890763, guid: 6d52bd8e8337035459e100dbbb5ed4a5, type: 3}
+      propertyPath: EnemyDead.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8056224217892412833, guid: 6d52bd8e8337035459e100dbbb5ed4a5, type: 3}
@@ -74798,6 +74826,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7455348500572113123, guid: f107c257473353f4cbf706c5c98ca898, type: 3}
   m_PrefabInstance: {fileID: 7455348501473165837}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7455348501473165839 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7455348500572113120, guid: f107c257473353f4cbf706c5c98ca898, type: 3}
+  m_PrefabInstance: {fileID: 7455348501473165837}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8518601224480579402
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -75015,6 +75048,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8699717694975254778, guid: 11d2a5dca76705948bed1df361d3e6de, type: 3}
+      propertyPath: _hiddenObjects.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8699717694975254778, guid: 11d2a5dca76705948bed1df361d3e6de, type: 3}
+      propertyPath: _hiddenObjects.Array.data[1]
+      value: 
+      objectReference: {fileID: 1864713753}
+    - target: {fileID: 8699717694975254778, guid: 11d2a5dca76705948bed1df361d3e6de, type: 3}
+      propertyPath: _hiddenObjects.Array.data[2]
+      value: 
+      objectReference: {fileID: 7455348501473165839}
     - target: {fileID: 8699717694993701049, guid: 11d2a5dca76705948bed1df361d3e6de, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

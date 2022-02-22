@@ -19,7 +19,6 @@ public class PlayerCamera : MonoBehaviour
 
     public bool TryCameraMove(Vector3 target)
     {
-        
         if(!_isStatic && _minPoint != null && _maxPoint != null)
         {
             var cameraSize = _camera.ScreenToWorldPoint(new Vector2(_camera.pixelWidth, _camera.pixelHeight)) - _camera.ScreenToWorldPoint(new Vector2(0, 0));

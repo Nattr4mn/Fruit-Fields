@@ -4,7 +4,8 @@ using UnityEngine;
 public class RewardedAds : MonoBehaviour
 {
     private RewardedAd _rewardedAd;
-    private const string adUnitId = "ca-app-pub-3940256099942544/5224354917";
+    //private const string adUnitId = "ca-app-pub-3940256099942544/5224354917"; //test key
+    private const string adUnitId = "ca-app-pub-6267425863853814/1028003458";
 
     public RewardedAd RewardedAd => _rewardedAd;
 

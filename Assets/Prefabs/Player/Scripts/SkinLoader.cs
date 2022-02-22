@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class SkinLoader : MonoBehaviour
 {
-    public Skin CurrentSkin => _currentSkin;
-
     [SerializeField] private List<Skin> _skinList;
     private Skin _currentSkin;
+
+    public Skin CurrentSkin => _currentSkin;
 
     public void LoadSkin()
     {
